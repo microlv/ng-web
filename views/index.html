@@ -1,23 +1,59 @@
 <!DOCTYPE html>
-<html ng-app="studyOnlineApp">
+<html lang="en" ng-app="app">
 <head>
-    <meta charset="utf-8">
-    <title>study-online</title>
-    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/css/bootstrap-theme.css">
-    <script src="./lib/jquery/jquery-2.1.1.js"></script>
-    <script src="./lib/bootstrap/js/bootstrap.js"></script>
-    <script src="./lib/angularjs/angular.js"></script>
-    <script src="./lib/angularjs/angular-ui-router.js"></script>
-    <script src="./javascripts/study-online-app.js"></script>
+    <title>Edu Online</title>
+    <meta charset="UTF-8"/>
+    <meta name="fragment" content="!"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css"/>
+    <link rel="stylesheet" href="stylesheets/bootstrap-responsive.min.css"/>
+    <!--<link rel="stylesheet" href="stylesheets/fullcalendar.css"/>-->
+    <link rel="stylesheet" href="stylesheets/edu-style.css"/>
+    <link rel="stylesheet" href="stylesheets/edu-media.css"/>
+    <!--<link rel="stylesheet" href="stylesheets/edu-login.css"/>-->
+    <link rel="stylesheet" href="stylesheets/font-awesome/css/font-awesome.css"/>
+    <!--<link rel="stylesheet" href="stylesheets/jquery.gritter.css"/>-->
+
+    <!--<script src="lib/excanvas.min.js"></script>-->
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/jquery.ui.custom.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/edu.login.js"></script>
+    <!--<script src="lib/jquery.flot.min.js"></script>-->
+    <!--<script src="lib/jquery.flot.resize.min.js"></script>-->
+    <!--<script src="lib/jquery.peity.min.js"></script>-->
+    <!--<script src="lib/fullcalendar.min.js"></script>-->
+    <!--<script src="lib/matrix.js"></script>-->
+    <!--<script src="lib/matrix.dashboard.js"></script>-->
+    <!--<script src="lib/jquery.gritter.min.js"></script>-->
+    <!--<script src="lib/matrix.interface.js"></script>-->
+    <!--<script src="lib/matrix.chat.js"></script>-->
+    <!--<script src="lib/jquery.validate.js"></script>-->
+    <!--<script src="lib/matrix.form_validation.js"></script>-->
+    <!--<script src="lib/jquery.wizard.js"></script>-->
+    <!--<script src="lib/jquery.uniform.js"></script>-->
+    <!--<script src="lib/select2.min.js"></script>-->
+    <!--<script src="lib/matrix.popover.js"></script>-->
+    <!--<script src="lib/jquery.dataTables.min.js"></script>-->
+    <!--<script src="lib/matrix.tables.js"></script>-->
+
+    <script src="lib/angularjs/angular.js"></script>
+    <script src="lib/angularjs/angular-animate.js"></script>
+    <script src="lib/angularjs/angular-ui-router.js"></script>
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/platform.js"></script>
+    <script src="javascripts/authentication.js"></script>
+
+
 </head>
-<body>
-<h1>study-online</h1>
+<body ng-controller="platformController">
 
-<div>
+<!--<div ui-view></div>-->
+<div ui-view="header"></div>
+<div ui-view="sidebar"></div>
+<div ui-view="search"></div>
+<div ui-view="content"></div>
+<div ui-view="footer"></div>
 
-    {{1+1}}
-    <input type="text" id="input"/>
-</div>
 </body>
 </html>
