@@ -1,46 +1,36 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function (req, res) {
-    res.render('index');
-});
-
 router.get('/header', function (req, res) {
-    res.render('header');
+    res.render('layout/header');
 });
 
 router.get('/sidebar', function (req, res) {
-    res.render('sidebar');
+    res.render('layout/sidebar');
 });
 
 router.get('/navigate', function (req, res) {
-    res.render('navigate');
+    res.render('layout/navigate');
 });
 
 router.get('/mainframe', function (req, res) {
-    res.render('mainframe');
+    res.render('layout/mainframe');
 });
 
 router.get('/content', function (req, res) {
-    res.render('content');
+    res.render('layout/content');
 });
 
 router.get('/search', function (req, res) {
-    res.render('search');
+    res.render('layout/search');
 });
 
 router.get('/footer', function (req, res) {
-    res.render('footer');
+    res.render('layout/footer');
 });
 
 router.get('/about', function (req, res) {
-    res.render('about');
+    res.render('layout/about');
 });
-
-router.get('/login', function (req, res) {
-    res.render('partials/login');
-});
-
 
 module.exports = router;

@@ -5,34 +5,48 @@
 (function (angular) {
     'use strict';
 
+
     var platform = angular.module('platform', []);
 
     platform.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('');
 
         $stateProvider
-//            .state('/', {url: '', templateUrl: 'mainframe'})
             .state('index', {
                 url: '',
                 views: {
-                    'header': { templateUrl: 'header'},
-                    'search': { templateUrl: 'search'},
-                    'content': { templateUrl: 'content'},
-                    'sidebar': { templateUrl: 'sidebar'},
-                    'footer': { templateUrl: 'footer'}
+                    'header': {templateUrl: '/layout/header'},
+                    'search': {templateUrl: '/layout/search'},
+                    'content': {templateUrl: '/layout/content'},
+                    'sidebar': {templateUrl: '/layout/sidebar'},
+                    'footer': {templateUrl: '/layout/footer'}
                 }
             })
-            .state('index.about', {url: '/about', templateUrl: 'about'})
-            .state('index.action', {url: '/action', templateUrl: 'templates/action-box' })
-            .state('login', {
-                url: '/login', templateUrl: 'login'
+            .state('index.about', {
+                url: '/about', templateUrl: '/templates/about'
+            })
+            .state('index.action', {
+                url: '/action', templateUrl: '/templates/action-box'
+            })
+            .state('index.article', {
+                url: '/article', templateUrl: '/templates/article'
             });
+            //.state('index.*', {
+            //    url: '/error', templateUrl: '/templates/article'
+            //});
     }]);
 
-    platform.controller('platformController', ['$state', function ($state) {
-
+    platform.run(['$rootScope', '$state', 'dialogService', function ($rootScope, $state, dialogService) {
+        //$rootScope.$on('$routeChangeStart', function (evt, next, current) {
+        //    dialogService.show();
+        //
+        //    console.log(current);
+        //    console.log(next);
+        //});
+        //$rootScope.$on('window.authentication.authRequire', function (evt, next, current) {
+        //    $state.go('login');
+        //});
     }]);
-
 
 })(angular);
 

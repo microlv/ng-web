@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 <head>
-    <title>Edu Online</title>
+    <title>ng-web</title>
     <meta charset="UTF-8"/>
     <meta name="fragment" content="!"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -15,10 +15,9 @@
     <!--<link rel="stylesheet" href="stylesheets/jquery.gritter.css"/>-->
 
     <!--<script src="lib/excanvas.min.js"></script>-->
-    <script src="lib/jquery.min.js"></script>
-    <script src="lib/jquery.ui.custom.js"></script>
-    <script src="lib/bootstrap.min.js"></script>
-    <script src="lib/edu.login.js"></script>
+    <!--<script src="lib/jquery/jquery.min.js"></script>-->
+    <!--<script src="lib/jquery/jquery.ui.custom.js"></script>-->
+    <!--<script src="lib/edu.login.js"></script>-->
     <!--<script src="lib/jquery.flot.min.js"></script>-->
     <!--<script src="lib/jquery.flot.resize.min.js"></script>-->
     <!--<script src="lib/jquery.peity.min.js"></script>-->
@@ -37,23 +36,30 @@
     <!--<script src="lib/jquery.dataTables.min.js"></script>-->
     <!--<script src="lib/matrix.tables.js"></script>-->
 
-    <script src="lib/angularjs/angular.js"></script>
-    <script src="lib/angularjs/angular-animate.js"></script>
-    <script src="lib/angularjs/angular-ui-router.js"></script>
-    <script src="javascripts/app.js"></script>
-    <script src="javascripts/platform.js"></script>
-    <script src="javascripts/authentication.js"></script>
-
 
 </head>
-<body ng-controller="platformController">
+<body ng-controller="mainframeController">
 
-<!--<div ui-view></div>-->
-<div ui-view="header"></div>
-<div ui-view="sidebar"></div>
-<div ui-view="search"></div>
-<div ui-view="content"></div>
-<div ui-view="footer"></div>
+<div data-ui-view="header"></div>
+<div data-ui-view="sidebar"></div>
+<div data-ui-view="search"></div>
+<div data-ui-view="content"></div>
+<div data-ui-view="footer"></div>
+
+<script src="lib/jquery/jquery-2.1.1.js"></script>
+<script src="lib/common/underscore.js"></script>
+<script src="lib/angularjs/angular.js"></script>
+<script src="lib/angularjs/angular-animate.js"></script>
+<script src="lib/angularjs/angular-ui-router.js"></script>
+<script src="lib/bootstrap/bootstrap.js"></script>
+<script src="lib/bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/edu.js"></script>
+<script src="javascripts/platform.js"></script>
+<script src="javascripts/authentication.js"></script>
+<script src="javascripts/services/dialog-service.js"></script>
+<script src="javascripts/controller/action-box.js"></script>
+<script src="javascripts/controller/mainframe-controller.js"></script>
 
 </body>
 </html>
