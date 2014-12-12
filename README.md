@@ -1,6 +1,9 @@
-study-online
+ng-web
 ============
 
-use angularjs & nodejs & mongoDB,build for study online website(testing).
+use angularjs & nodejs & mongoDB, build for the single page application blog.
 
-single page application website.
+I will show you how to do a sap website by using angularjs.
+
+demo will coming soon...
+document will coming soon...
