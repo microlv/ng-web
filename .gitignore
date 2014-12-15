@@ -29,3 +29,8 @@ build/Release
 node_modules
 public/libs
 
+# Ignore Windows desktop setting file
+desktop.ini
+
+.idea
+config.js

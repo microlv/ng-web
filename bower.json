@@ -1,0 +1,31 @@
+{
+  "name": "ng-web",
+  "version": "1.0.1",
+  "description": "ng-web",
+  "main": "app.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "angularjs",
+    "angular.js",
+    "ng",
+    "nodejs",
+    "node.js",
+    "mongodb",
+    "mongo",
+    "javascript",
+    "js"
+  ],
+  "authors": [
+    "andy.lv"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
