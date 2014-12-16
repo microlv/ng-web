@@ -1,36 +1,33 @@
+var _ = require('underscore');
+
 var express = require('express');
+var index = express.Router();
 var router = express.Router();
 
-router.get('/header', function (req, res) {
-    res.render('layout/header');
+var requestList = [
+    {req: '/header', res: 'layout/header'},
+    {req: '/sidebar', res: 'layout/sidebar'},
+    {req: '/navigate', res: 'layout/navigate'},
+    {req: '/mainframe', res: 'layout/mainframe'},
+    {req: '/content', res: 'layout/content'},
+    {req: '/search', res: 'layout/search'},
+    {req: '/footer', res: 'layout/footer'},
+    {req: '/about', res: 'layout/about'}
+];
+
+_.forEach(requestList, function (k) {
+    router.get(k.req, function (req, res) {
+        res.render(k.res);
+    });
 });
 
-router.get('/sidebar', function (req, res) {
-    res.render('layout/sidebar');
+module.exports.layout = router;
+
+
+/* GET home page. */
+index.get('/', function (req, res) {
+    res.render('index');
 });
 
-router.get('/navigate', function (req, res) {
-    res.render('layout/navigate');
-});
+module.exports.index = index;
 
-router.get('/mainframe', function (req, res) {
-    res.render('layout/mainframe');
-});
-
-router.get('/content', function (req, res) {
-    res.render('layout/content');
-});
-
-router.get('/search', function (req, res) {
-    res.render('layout/search');
-});
-
-router.get('/footer', function (req, res) {
-    res.render('layout/footer');
-});
-
-router.get('/about', function (req, res) {
-    res.render('layout/about');
-});
-
-module.exports = router;

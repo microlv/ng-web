@@ -5,8 +5,9 @@
     <meta charset="UTF-8"/>
     <meta name="fragment" content="!"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css"/>
-    <link rel="stylesheet" href="stylesheets/bootstrap-responsive.min.css"/>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css"/>
+    <!--<link rel="stylesheet" href="bootstrap/dist/css/bootstrap-responsive.min.css"/>-->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap-theme.min.css"/>
     <!--<link rel="stylesheet" href="stylesheets/fullcalendar.css"/>-->
     <link rel="stylesheet" href="stylesheets/edu-style.css"/>
     <link rel="stylesheet" href="stylesheets/edu-media.css"/>
@@ -46,13 +47,23 @@
 <div data-ui-view="content"></div>
 <div data-ui-view="footer"></div>
 
-<script src="lib/jquery/jquery-2.1.1.js"></script>
-<script src="lib/common/underscore.js"></script>
-<script src="lib/angularjs/angular.js"></script>
-<script src="lib/angularjs/angular-animate.js"></script>
-<script src="lib/angularjs/angular-ui-router.js"></script>
-<script src="lib/bootstrap/bootstrap.js"></script>
-<script src="lib/bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="libs/jquery/dist/jquery.js"></script>
+
+<!--angular libs-->
+<script src="libs/angular/angular.js"></script>
+<script src="libs/angular-animate/angular-animate.js"></script>
+<!--<script src="libs/angular-ui-bootstrap/angular-ui-bootstrap.js"></script>-->
+<script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="libs/angular-loading-bar/src/loading-bar.js"></script>
+<script src="libs/textAngular/dist/textAngular.js"></script>
+
+<!--common libs-->
+<script src="libs/underscore.js"></script>
+<script src="libs/bootstrap/dist/js/bootstrap.js"></script>
+<script src="libs/underscore/underscore.js"></script>
+<script src="app/ui-bootstrap-tpls.js"></script>
+
+<!--user libs-->
 <script src="javascripts/app.js"></script>
 <script src="javascripts/edu.js"></script>
 <script src="javascripts/platform.js"></script>
