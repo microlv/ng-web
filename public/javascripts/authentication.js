@@ -7,8 +7,8 @@
 
     var authentication = angular.module('authentication', []);
 
-    window.authentication =window.authentication || {
-        tokenKey:'authentication.key.edu.online',
+    window.authentication = window.authentication || {
+        tokenKey: 'authentication.key.edu.online',
         authRequire: '',
         authSuccess: '',
         loginSuccess: '',
@@ -23,7 +23,7 @@
                 storage = window.localStorage;
             }
 
-            function login(name,password) {
+            function login(name, password) {
 
             }
 
@@ -32,7 +32,7 @@
             }
 
             function getTokenAuth() {
-                var tokenKey=storage.getItem(window.authentication.tokenKey);
+                var tokenKey = storage.getItem(window.authentication.tokenKey);
                 var json = JSON.parse(tokenKey);
                 return json;
             }

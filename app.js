@@ -4,7 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
 var routes = require('./routes');
+var config = require('./config');
+
 
 var app = express();
 
@@ -17,7 +20,7 @@ app.set('view engine', 'html');
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -55,11 +58,9 @@ app.use(function (err, req, res, next) {
 });
 
 
-var debug = require('debug')('study-online');
-app.set('port', process.env.PORT || 3000);
+var debug = require('debug')('ng-web');
+app.set('port', config.port || process.env.PORT);
 
-var server = app.listen(app.get('port'), function() {
+var server = app.listen(app.get('port'), function () {
     debug('Express server listening on port ' + server.address().port);
 });
-
-module.exports = app;
