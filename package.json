@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "start": "node app"
+    "start": "node app.js"
   },
   "dependencies": {
     "async": "^0.9.0",
@@ -39,5 +39,9 @@
   "bugs": {
     "url": "https://github.com/lvjianyu/ng-web/issues"
   },
-  "homepage": "https://github.com/lvjianyu/ng-web"
+  "homepage": "https://github.com/lvjianyu/ng-web",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lvjianyu/ng-web"
+  }
 }
