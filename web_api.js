@@ -37,7 +37,7 @@ var partialsRequest = [
 var templatesRequest = [
 	{req: '/about', res: 'templates/about'},
 	{req: '/article', res: 'templates/article'},
-	{req: '/action-box', res: 'templates/tabs'}
+	{req: '/tabs', res: 'templates/tabs'}
 ];
 
 //module.exports = {

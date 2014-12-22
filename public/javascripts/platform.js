@@ -3,50 +3,50 @@
  */
 
 (function (angular) {
-    'use strict';
+	'use strict';
 
 
-    var platform = angular.module('platform', []);
+	var platform = angular.module('platform', []);
 
-    platform.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('');
+	platform.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
+		function ($stateProvider, $urlRouterProvider, $locationProvider) {
+			//$locationProvider.html5Mode(true);
+			$urlRouterProvider.otherwise('/tabs');
 
-        $stateProvider
-            .state('index', {
-                url: '',
-                views: {
-                    'header': {templateUrl: '/layout/header'},
-                    'search': {templateUrl: '/layout/search'},
-                    'content': {templateUrl: '/layout/content'},
-                    'sidebar': {templateUrl: '/layout/sidebar'},
-                    'footer': {templateUrl: '/layout/footer'}
-                }
-            })
-            .state('index.about', {
-                url: '/about', templateUrl: '/templates/about'
-            })
-            .state('index.action', {
-                url: '/action', templateUrl: '/templates/action-box'
-            })
-            .state('index.article', {
-                url: '/article', templateUrl: '/templates/article'
-            });
-            //.state('index.*', {
-            //    url: '/error', templateUrl: '/templates/article'
-            //});
-    }]);
+			$stateProvider
+				.state('index', {
+					url: '',
+					views: {
+						'header': {templateUrl: '/layout/header'},
+						'search': {templateUrl: '/layout/search'},
+						'content': {templateUrl: '/layout/content'},
+						'sidebar': {templateUrl: '/layout/sidebar'},
+						'footer': {templateUrl: '/layout/footer'}
+					}
+				})
+				.state('index.about', {
+					url: '/about', templateUrl: '/templates/about'
+				})
+				.state('index.tabs', {
+					url: '/tabs', templateUrl: '/templates/tabs'
+				})
+				.state('index.article', {
+					url: '/article', templateUrl: '/templates/article'
+				});
 
-    platform.run(['$rootScope', '$state', 'dialogService', function ($rootScope, $state, dialogService) {
-        //$rootScope.$on('$routeChangeStart', function (evt, next, current) {
-        //    dialogService.show();
-        //
-        //    console.log(current);
-        //    console.log(next);
-        //});
-        //$rootScope.$on('window.authentication.authRequire', function (evt, next, current) {
-        //    $state.go('login');
-        //});
-    }]);
+		}]);
+
+	platform.run(['$rootScope', '$state', 'dialogService', function ($rootScope, $state, dialogService) {
+		//$rootScope.$on('$routeChangeStart', function (evt, next, current) {
+		//    dialogService.show();
+		//
+		//    console.log(current);
+		//    console.log(next);
+		//});
+		//$rootScope.$on('window.authentication.authRequire', function (evt, next, current) {
+		//    $state.go('login');
+		//});
+	}]);
 
 })(angular);
 

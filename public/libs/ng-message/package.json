@@ -1,0 +1,28 @@
+{
+  "name": "ngMessage",
+  "version": "1.0.1",
+  "description": "message for angularjs",
+  "main": "ngMessage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lvjianyu/ngMessage.git"
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "ng",
+    "message",
+    "ng-message",
+    "ngMessage",
+    "msg"
+  ],
+  "author": "andy.lv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lvjianyu/ngMessage/issues"
+  },
+  "homepage": "https://github.com/lvjianyu/ngMessage"
+}
