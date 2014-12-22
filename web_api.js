@@ -37,7 +37,7 @@ var partialsRequest = [
 var templatesRequest = [
 	{req: '/about', res: 'templates/about'},
 	{req: '/article', res: 'templates/article'},
-	{req: '/action-box', res: 'templates/action-box'}
+	{req: '/action-box', res: 'templates/tabs'}
 ];
 
 //module.exports = {
@@ -47,9 +47,10 @@ var templatesRequest = [
 //	templates: routerStrategy(templatesRequest)
 //};
 
+
 module.exports=function(app) {
 	app.use('/', routerStrategy(indexRequest));
 	app.use('/layout', routerStrategy(layoutRequest));
-	app.use('/templates', routerStrategy(partialsRequest));
-	app.use('/partials', routerStrategy(templatesRequest));
+	app.use('/templates', routerStrategy(templatesRequest));
+	app.use('/partials', routerStrategy(partialsRequest));
 };
