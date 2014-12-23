@@ -5,7 +5,7 @@
 (function (angular) {
     'use strict';
 
-    angular.module('edu').controller('mainframeController', ['$scope', 'dialogService', function ($scope, dialogService) {
+    angular.module('ngWeb').controller('mainframeController', ['$scope', 'dialogService', function ($scope, dialogService) {
 
         $scope.login = function () {
             dialogService.show({

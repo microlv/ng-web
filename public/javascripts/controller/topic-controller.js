@@ -4,7 +4,7 @@
 (function (angular) {
     'use strict';
 
-    angular.module('edu').controller('actionBoxController', ['$scope', function ($scope) {
+    angular.module('ngWeb').controller('tabsController', ['$scope', function ($scope) {
 
         var list = ['icon-dashboard','bg_ly', ];
 

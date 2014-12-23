@@ -4,6 +4,6 @@
 (function (angular) {
     'use strict';
 
-    angular.module('edu', []);
+    angular.module('ngWeb', []);
 
 })(angular);

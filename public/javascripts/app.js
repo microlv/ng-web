@@ -11,7 +11,7 @@
 		'ui.bootstrap',
 		'platform',
 		'authentication',
-		'edu',
+		'ngWeb',
 		'ngMessage'
 	];
 

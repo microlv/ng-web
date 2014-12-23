@@ -11,7 +11,7 @@
 	platform.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 		function ($stateProvider, $urlRouterProvider, $locationProvider) {
 			//$locationProvider.html5Mode(true);
-			$urlRouterProvider.otherwise('/tabs');
+			$urlRouterProvider.otherwise('/topic');
 
 			$stateProvider
 				.state('index', {
@@ -27,8 +27,8 @@
 				.state('index.about', {
 					url: '/about', templateUrl: '/templates/about'
 				})
-				.state('index.tabs', {
-					url: '/tabs', templateUrl: '/templates/tabs'
+				.state('index.topic', {
+					url: '/topic', templateUrl: '/templates/topic'
 				})
 				.state('index.article', {
 					url: '/article', templateUrl: '/templates/article'
