@@ -40,14 +40,6 @@ var templatesRequest = [
 	{req: '/topic', res: 'templates/topic'}
 ];
 
-//module.exports = {
-//	index: routerStrategy(indexRequest),
-//	layout: routerStrategy(layoutRequest),
-//	partials: routerStrategy(partialsRequest),
-//	templates: routerStrategy(templatesRequest)
-//};
-
-
 module.exports=function(app) {
 	app.use('/', routerStrategy(indexRequest));
 	app.use('/layout', routerStrategy(layoutRequest));
