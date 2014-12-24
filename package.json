@@ -16,7 +16,7 @@
     "morgan": "~1.3.0",
     "serve-favicon": "~2.1.3"
   },
-  "description": "angularjs",
+  "description": "angularjs nodejs mongodb",
   "main": "app.js",
   "devDependencies": {},
   "repository": {
@@ -24,7 +24,15 @@
     "url": "https://github.com/lvjianyu/ng-web.git"
   },
   "keywords": [
-    "angular"
+    "angularjs",
+    "angular.js",
+    "ng",
+    "nodejs",
+    "node.js",
+    "mongodb",
+    "mongo",
+    "javascript",
+    "js"
   ],
   "author": "andy.lv",
   "license": "MIT",

@@ -18,16 +18,16 @@ function routerStrategy(routerConfig) {
 /* GET home page. */
 var indexRequest = [{req: '/', res: 'index'}];
 
-var layoutRequest = [
-	{req: '/header', res: 'layout/header'},
-	{req: '/sidebar', res: 'layout/sidebar'},
-	{req: '/navigate', res: 'layout/navigate'},
-	{req: '/mainframe', res: 'layout/mainframe'},
-	{req: '/content', res: 'layout/content'},
-	{req: '/search', res: 'layout/search'},
-	{req: '/footer', res: 'layout/footer'},
-	{req: '/about', res: 'layout/about'}
-];
+//var layoutRequest = [
+//	{req: '/header', res: 'layout/header'},
+//	{req: '/sidebar', res: 'layout/sidebar'},
+//	{req: '/navigate', res: 'layout/navigate'},
+//	{req: '/mainframe', res: 'layout/mainframe'},
+//	{req: '/content', res: 'layout/content'},
+//	{req: '/search', res: 'layout/search'},
+//	{req: '/footer', res: 'layout/footer'},
+//	{req: '/about', res: 'layout/about'}
+//];
 
 var partialsRequest = [
 	{req: '/dialog-modal', res: 'partials/dialog-modal'},
@@ -42,7 +42,7 @@ var templatesRequest = [
 
 module.exports=function(app) {
 	app.use('/', routerStrategy(indexRequest));
-	app.use('/layout', routerStrategy(layoutRequest));
+	//app.use('/layout', routerStrategy(layoutRequest));
 	app.use('/templates', routerStrategy(templatesRequest));
 	app.use('/partials', routerStrategy(partialsRequest));
 };

@@ -15,25 +15,20 @@
 
 			$stateProvider
 				.state('index', {
-					url: '',
-					views: {
-						'header': {templateUrl: '/layout/header'},
-						'search': {templateUrl: '/layout/search'},
-						'content': {templateUrl: '/layout/content'},
-						'sidebar': {templateUrl: '/layout/sidebar'},
-						'footer': {templateUrl: '/layout/footer'}
-					}
-				})
-				.state('index.about', {
-					url: '/about', templateUrl: '/templates/about'
-				})
-				.state('index.topic', {
 					url: '/topic', templateUrl: '/templates/topic'
 				})
-				.state('index.article', {
+				.state('about', {
+					url: '/about', templateUrl: '/templates/about'
+				})
+				.state('topic', {
+					url: '/topic', templateUrl: '/templates/topic'
+				})
+				.state('article', {
 					url: '/article', templateUrl: '/templates/article'
+				})
+				.state('topic.javascript', {
+					url: '/topic/javascript', templateUrl: '/topic/javascript'
 				});
-
 		}]);
 
 	platform.run(['$rootScope', '$state', 'dialogService', function ($rootScope, $state, dialogService) {
@@ -46,6 +41,7 @@
 		//$rootScope.$on('window.authentication.authRequire', function (evt, next, current) {
 		//    $state.go('login');
 		//});
+
 	}]);
 
 })(angular);

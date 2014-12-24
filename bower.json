@@ -5,12 +5,20 @@
   "authors": [
     "andy.lv <andy.lv@live.com>"
   ],
-  "description": "angular",
+  "description": "angularjs nodejs mongodb",
   "moduleType": [
     "node"
   ],
   "keywords": [
-    "angular"
+    "angularjs",
+    "angular.js",
+    "ng",
+    "nodejs",
+    "node.js",
+    "mongodb",
+    "mongo",
+    "javascript",
+    "js"
   ],
   "license": "MIT",
   "ignore": [
