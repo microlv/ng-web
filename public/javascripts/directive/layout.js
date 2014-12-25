@@ -6,10 +6,21 @@
 	'use strict';
 
 	angular.module('ngWeb')
-		.directive('layoutHeader', ['$templateCache', function ($templateCache) {
+		.directive('layoutHeader', ['$templateCache', 'dialogService', function ($templateCache, dialogService) {
 			return {
 				restrict: 'EA',
-				template: $templateCache.get('layout-header.html')
+				scope: {},
+				template: $templateCache.get('layout-header.html'),
+				controller: function ($scope) {
+					$scope.login = function () {
+						dialogService.show({
+							template: $templateCache.get('login-template.html')
+						}).then(function (result) {
+							console.log(result);
+						}, function () {
+						});
+					};
+				}
 			};
 		}])
 		.directive('layoutFooter', ['$templateCache', function ($templateCache) {

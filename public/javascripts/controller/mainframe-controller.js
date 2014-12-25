@@ -49,13 +49,10 @@
 			spanStyle: 'label label-success'
 		}]);
 
-	angular.module('ngWeb').controller('mainframeController', ['$scope', 'dialogService', 'topicItemSource',
-		function ($scope, dialogService, topicItemSource) {
+	angular.module('ngWeb').controller('mainframeController', ['$scope', 'topicItemSource',
+		function ($scope, topicItemSource) {
 
 			$scope.topicItemSource = topicItemSource;
 
-			$scope.login = function () {
-				dialogService.show({});
-			};
 		}]);
 })(angular);

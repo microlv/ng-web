@@ -2,18 +2,12 @@
  * Created by Andy.Lv on 2014/12/22.
  */
 
-var express = require('express');
-var topicDao = require('./dao/topic');
+'use strict';
 
-var router = express.Router();
-
-function topicRouter() {
-	router.get('/updatelist', function (req, res) {
-		return res.send(topicDao.updateList());
-	});
-	return router;
-}
+var topic = require('./controller/topic');
 
 module.exports = function (app) {
-	app.use('/topic', topicRouter());
+
+	app.get('/topic/list', topic.list);
+	app.get('/topic/:type', topic.listByType);
 };

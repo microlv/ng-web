@@ -2,6 +2,8 @@
  * Created by Andy.Lv on 2014/12/23.
  */
 
+'use strict';
+
 module.exports = {
 	updateList: function () {
 		return [
