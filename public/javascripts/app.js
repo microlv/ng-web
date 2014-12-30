@@ -12,11 +12,16 @@
 		'platform',
 		'authentication',
 		'ngWeb',
-		'ngMessage'
+		'ngMessage',
+		'angular-loading-bar'
 	];
 	//window.globePath= 'http://localhost:3000';
 
 	var app = angular.module('app', dependInject);
+
+	//app.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
+	//	cfpLoadingBarProvider.includeSpinner = false;
+	//}]);
 
 	//app.config(['$provide', function ($provide) {
 	//	$provide.decorator('$templateCache', ['$http', '$delegate', function ($http, $delegate) {

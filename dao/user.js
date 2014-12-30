@@ -3,16 +3,28 @@
  */
 
 'use strict';
-var user = require('../models').User;
+var User = require('../models').User;
+var crypto = require('crypto');
 
 module.exports = {
 	auth: function (username, password, callback) {
-		user.find({username: username, password: password}, callback);
+		User.find({username: username, password: password}, callback);
 	},
-	create: function (config, callback) {
-		user.create({
-			username: 'andy.lv@live.com',
-			password: 'test'
-		});
+	find: function (obj, callback) {
+		User.find(obj, callback);
+	},
+	reg: function (username, password, callback) {
+		var md5 = crypto.createHash('md5');
+		password = md5.update(password).digest('hex');
+
+		//this.find({username: username}, function () {
+		//
+		//});
+		var newUser = new User();
+
+		newUser.username = username;
+		newUser.password = password;
+
+		newUser.save(callback);
 	}
 };

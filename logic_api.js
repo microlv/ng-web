@@ -13,10 +13,11 @@ var topicRouter = express.Router();
 topicRouter.get('/list', topic.list);
 topicRouter.get('/:type', topic.listByType);
 
-var apiRouter = express.Router();
-apiRouter.post('/login', api.login);
+var authRouter = express.Router();
+authRouter.post('/login', api.login);
+authRouter.post('/reg', api.reg);
 
 module.exports = {
 	topic: topicRouter,
-	api: apiRouter
+	auth: authRouter
 };

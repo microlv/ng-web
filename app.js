@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', web_api);
 app.use('/topic', logic_api.topic);
-app.use('/api', logic_api.api);
+app.use('/auth', logic_api.auth);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
