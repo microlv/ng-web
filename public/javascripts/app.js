@@ -14,6 +14,7 @@
 		'ngWeb',
 		'ngMessage'
 	];
+	//window.globePath= 'http://localhost:3000';
 
 	var app = angular.module('app', dependInject);
 

@@ -15,9 +15,6 @@
 					$scope.login = function () {
 						dialogService.show({
 							template: $templateCache.get('login-template.html')
-						}).then(function (result) {
-							console.log(result);
-						}, function () {
 						});
 					};
 				}

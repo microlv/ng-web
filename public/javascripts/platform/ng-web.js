@@ -94,26 +94,41 @@
 
 		//UI will change later!!!
 		var loginTemplateHtml =
-			'<div id="#loginbox">' +
-			'<div id="#loginform">' +
-			'<div class="control-group">' +
-			'<div class="controls">' +
-			'<div class="main_input_box">' +
-			'<span class="add-on bg_lg"><i class="icon-user"></i></span>' +
-			'<input type="text" placeholder="Username" data-ng-modal="data.username"/>' +
-			'</div>' +
-			'</div>' +
-			'</div>' +
-			'<div class="control-group">' +
-			'<div class="controls">' +
-			'<div class="main_input_box">' +
-			'<span class="add-on bg_ly"><i class="icon-lock"></i></span>' +
-			'<input type="password" placeholder="Password" data-ng-modal="data.password"/>' +
-			'</div>' +
-			'</div>' +
-			'</div>' +
-			'</div>' +
+
+			'<div data-ng-controller="loginController">' +
+			'    <div class="modal-header">' +
+			'        <h3 class="modal-title">{{title}}</h3>' +
+			'    </div>' +
+			'    <div class="modal-body">' +
+
+			'       <div id="#loginbox">' +
+			'       <div id="#loginform">' +
+			'       <div class="control-group">' +
+			'       <div class="controls">' +
+			'       <div class="main_input_box">' +
+			'       <span class="add-on bg_lg"><i class="icon-user"></i></span>' +
+			'       <input type="text" placeholder="Username" data-ng-model="username"/>' +
+			'       </div>' +
+			'       </div>' +
+			'       </div>' +
+			'       <div class="control-group">' +
+			'       <div class="controls">' +
+			'       <div class="main_input_box">' +
+			'       <span class="add-on bg_ly"><i class="icon-lock"></i></span>' +
+			'       <input type="password" placeholder="Password" data-ng-model="password"/>' +
+			'       </div>' +
+			'       </div>' +
+			'       </div>' +
+			'       </div>' +
+			'       </div>' +
+
+			'    </div>' +
+			'    <div class="modal-footer">' +
+			'        <button class="btn btn-primary" data-ng-click="ok()">OK</button>' +
+			'        <button class="btn btn-warning" data-ng-click="cancel()">Cancel</button>' +
+			'    </div>' +
 			'</div>';
+
 
 		$templateCache.put('layout-header.html', layoutHeaderHtml);
 		$templateCache.put('layout-content.html', layoutContentHtml);

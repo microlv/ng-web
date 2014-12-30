@@ -5,9 +5,18 @@
 'use strict';
 
 var topic = require('./controller/topic');
+var api = require('./api/auth');
 
-module.exports = function (app) {
+var express = require('express');
+var topicRouter = express.Router();
 
-	app.get('/topic/list', topic.list);
-	app.get('/topic/:type', topic.listByType);
+topicRouter.get('/list', topic.list);
+topicRouter.get('/:type', topic.listByType);
+
+var apiRouter = express.Router();
+apiRouter.post('/login', api.login);
+
+module.exports = {
+	topic: topicRouter,
+	api: apiRouter
 };

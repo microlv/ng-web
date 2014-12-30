@@ -5,34 +5,20 @@
 
 var _ = require('lodash');
 var express = require('express');
+var router = express.Router();
 
-function routerStrategy(routerConfig) {
-	var router = express.Router();
-	_.forEach(routerConfig, function (k) {
-		router.get(k.req, function (req, res) {
-			res.render(k.res);
-		});
-	});
-	return router;
+function render(html) {
+	return function (req, res) {
+		res.render(html);
+	};
 }
 
-/* GET home page. */
-var indexRequest = [{req: '/', res: 'index'}];
+router.get('/', render('index'));
+router.get('/templates/about', render('templates/about'));
+router.get('/templates/article', render('templates/article'));
+router.get('/templates/topic', render('templates/topic'));
+router.get('/partials/dialog-modal', render('partials/dialog-modal'));
+router.get('/partials/login', render('partials/login'));
 
-var partialsRequest = [
-	{req: '/dialog-modal', res: 'partials/dialog-modal'},
-	{req: '/login', res: 'partials/login'}
-];
+module.exports = router;
 
-var templatesRequest = [
-	{req: '/about', res: 'templates/about'},
-	{req: '/article', res: 'templates/article'},
-	{req: '/topic', res: 'templates/topic'}
-];
-
-module.exports=function(app) {
-	app.use('/', routerStrategy(indexRequest));
-	//app.use('/layout', routerStrategy(layoutRequest));
-	app.use('/templates', routerStrategy(templatesRequest));
-	app.use('/partials', routerStrategy(partialsRequest));
-};
