@@ -4,11 +4,10 @@
 
 'use strict';
 
+var Topic = require('../models').Topic;
+
 module.exports = {
-	updateList: function () {
-		return [
-			{topic: 'Javascript', number: 10},
-			{topic: 'C#', number: 5}
-		];
+	count: function (callback) {
+		Topic.count({}, callback);
 	}
 };

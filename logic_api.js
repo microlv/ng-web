@@ -10,8 +10,9 @@ var api = require('./api/auth');
 var express = require('express');
 var topicRouter = express.Router();
 
-topicRouter.get('/list', topic.list);
-topicRouter.get('/:type', topic.listByType);
+topicRouter.get('/count', topic.count);
+topicRouter.get('/:type', topic.getTopicByType);
+topicRouter.get('/:type/:id', topic.getTopicById);
 
 var authRouter = express.Router();
 authRouter.post('/login', api.login);

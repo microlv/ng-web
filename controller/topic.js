@@ -7,13 +7,14 @@ var express = require('express');
 var router = express.Router();
 
 module.exports = {
-	list: function () {
+	count: function () {
 
 	},
-	listByType: function (type) {
-		switch (type) {
-			case 'javascript':
-				break
-		}
+	getTopicByType: function (type) {
+
+	},
+	getTopicById: function (id) {
+
+
 	}
 };
