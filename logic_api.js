@@ -19,6 +19,6 @@ authRouter.post('/login', api.login);
 authRouter.post('/reg', api.reg);
 
 module.exports = {
-	topic: topicRouter,
-	auth: authRouter
+    topic: topicRouter,
+    auth: authRouter
 };

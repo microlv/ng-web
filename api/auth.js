@@ -7,23 +7,23 @@
 var user = require('../dao').user;
 
 module.exports = {
-	login: function (req, res, next) {
-		user.auth(req.body.username, req.body.password, function (err, docs) {
-			if (err) {
-				next(err);
-			}
-			res.send('auth success');
-		});
-	},
-	reg: function (req, res, next) {
-		console.log('');
+    login: function (req, res, next) {
+        user.auth(req.body.username, req.body.password, function (err, docs) {
+            if (err) {
+                next(err);
+            }
+            res.send('auth success');
+        });
+    },
+    reg: function (req, res, next) {
+        console.log('');
 
 
-		user.reg(req.body.username, req.body.password, function (err, docs) {
-			if (err) {
-				next(err);
-			}
-			res.send('auth success');
-		});
-	}
+        user.reg(req.body.username, req.body.password, function (err, docs) {
+            if (err) {
+                next(err);
+            }
+            res.send('auth success');
+        });
+    }
 };

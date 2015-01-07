@@ -7,7 +7,7 @@
 var Topic = require('../models').Topic;
 
 module.exports = {
-	count: function (callback) {
-		Topic.count({}, callback);
-	}
+    count: function (callback) {
+        Topic.count({}, callback);
+    }
 };

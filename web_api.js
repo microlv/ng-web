@@ -8,9 +8,9 @@ var express = require('express');
 var router = express.Router();
 
 function render(html) {
-	return function (req, res) {
-		res.render(html);
-	};
+    return function (req, res) {
+        res.render(html);
+    };
 }
 
 router.get('/', render('index'));

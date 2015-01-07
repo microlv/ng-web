@@ -7,14 +7,14 @@ var express = require('express');
 var router = express.Router();
 
 module.exports = {
-	count: function () {
+    count: function () {
 
-	},
-	getTopicByType: function (type) {
+    },
+    getTopicByType: function (type) {
 
-	},
-	getTopicById: function (id) {
+    },
+    getTopicById: function (id) {
 
 
-	}
+    }
 };

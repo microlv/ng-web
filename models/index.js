@@ -12,5 +12,5 @@ mongoose.connect(config.dbconnect, function (err) {
 });
 
 module.exports = {
-	User: mongoose.model('User')
+    User: mongoose.model('User')
 };

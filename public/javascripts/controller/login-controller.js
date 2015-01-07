@@ -3,26 +3,26 @@
  */
 
 (function (angular) {
-	'use strict';
+    'use strict';
 
-	angular.module('ngWeb').controller('loginController', ['$scope', '$http',
-		function ($scope, $http) {
-			$scope.ok = function () {
-				$http({
-					method: 'POST',
-					url: '/auth/reg',
-					data: {
-						username: $scope.username,
-						password: $scope.password
-					}
-				}).then(function (response) {
+    angular.module('ngWeb').controller('loginController', ['$scope', '$http',
+        function ($scope, $http) {
+            $scope.ok = function () {
+                $http({
+                    method: 'POST',
+                    url: '/auth/reg',
+                    data: {
+                        username: $scope.username,
+                        password: $scope.password
+                    }
+                }).then(function (response) {
 
-				}, function () {
+                }, function () {
 
-				});
-			};
-			$scope.cancel = function () {
-			};
-		}]);
+                });
+            };
+            $scope.cancel = function () {
+            };
+        }]);
 
 })(angular);

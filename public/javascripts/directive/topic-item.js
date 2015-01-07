@@ -3,19 +3,19 @@
  */
 
 (function (angular) {
-	'use strict';
+    'use strict';
 
-	angular.module('ngWeb').directive('topicItem', ['$templateCache', function ($templateCache) {
-		return {
-			restrict: 'EA',
-			template: $templateCache.get('topic-item.html'),
-			scope: {
-				itemSource: '='
-			},
-			link: function (scope, ele, att) {
+    angular.module('ngWeb').directive('topicItem', ['$templateCache', function ($templateCache) {
+        return {
+            restrict: 'EA',
+            template: $templateCache.get('topic-item.html'),
+            scope: {
+                itemSource: '='
+            },
+            link: function (scope, ele, att) {
 
-			}
-		};
-	}]);
+            }
+        };
+    }]);
 
 })(angular);
