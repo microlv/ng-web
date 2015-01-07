@@ -7,13 +7,6 @@
 
 	angular.module('ngWeb').value('topicItemSource', [
 		{
-			topic: 'News',
-			liStyle: 'bg_lb',
-			uiSref: 'topic.news',
-			iStyle: 'icon-dashboard',
-			spanStyle: 'label label-success'
-		},
-		{
 			topic: 'Javascript',
 			liStyle: 'bg_lg span3',
 			uiSref: 'topic.javascript',
@@ -21,6 +14,13 @@
 			spanStyle: 'label label-success'
 		},
 		{
+			topic: 'Angularjs',
+			liStyle: 'bg_lb',
+			uiSref: 'topic.angularjs',
+			iStyle: 'icon-dashboard',
+			spanStyle: 'label label-success'
+		},
+				{
 			topic: 'NodeJS',
 			liStyle: 'bg_ly span2',
 			uiSref: 'topic.nodejs',
