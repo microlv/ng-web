@@ -6,11 +6,13 @@
 var mongoose = require('mongoose');
 var config = require('../config');
 var user = require('./user');
+var topic = require('./topic');
 
 mongoose.connect(config.dbconnect, function (err) {
-
+    if (err) throw err;
 });
 
 module.exports = {
-    User: mongoose.model('User')
+    User: mongoose.model('User'),
+    Topic: mongoose.model('Topic')
 };

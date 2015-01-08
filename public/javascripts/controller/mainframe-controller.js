@@ -9,7 +9,7 @@
         {
             topic: 'Javascript',
             liStyle: 'bg_lg span3',
-            uiSref: 'topic.javascript',
+            uiSref: 'javascript',
             iStyle: 'icon-signal',
             spanStyle: 'label label-success'
         },
@@ -30,7 +30,7 @@
         {
             topic: 'C#',
             liStyle: 'bg_lo span3',
-            uiSref: 'topic.c#',
+            uiSref: 'csharp',
             iStyle: 'icon-th',
             spanStyle: 'label label-success'
         },

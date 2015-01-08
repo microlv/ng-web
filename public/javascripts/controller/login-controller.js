@@ -10,7 +10,7 @@
             $scope.ok = function () {
                 $http({
                     method: 'POST',
-                    url: '/auth/reg',
+                    url: '/api/auth/reg',
                     data: {
                         username: $scope.username,
                         password: $scope.password

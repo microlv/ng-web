@@ -5,20 +5,16 @@
 'use strict';
 
 var topic = require('./controller/topic');
-var api = require('./api/auth');
+var auth = require('./api/auth');
 
 var express = require('express');
-var topicRouter = express.Router();
+var router = express.Router();
 
-topicRouter.get('/count', topic.count);
-topicRouter.get('/:type', topic.getTopicByType);
-topicRouter.get('/:type/:id', topic.getTopicById);
+router.get('/topic/grouptopic', topic.groupTopic);
+router.get('/topic/:type', topic.getTopicByType);
+router.get('/topic/:type/:id', topic.getTopicById);
 
-var authRouter = express.Router();
-authRouter.post('/login', api.login);
-authRouter.post('/reg', api.reg);
+router.post('/auth/login', auth.login);
+router.post('/auth/reg', auth.reg);
 
-module.exports = {
-    topic: topicRouter,
-    auth: authRouter
-};
+module.exports = router;

@@ -17,6 +17,7 @@ router.get('/', render('index'));
 router.get('/templates/about', render('templates/about'));
 router.get('/templates/article', render('templates/article'));
 router.get('/templates/topic', render('templates/topic'));
+router.get('/templates/topic/:detail', render('templates/topic_detail'));
 router.get('/partials/dialog-modal', render('partials/dialog-modal'));
 router.get('/partials/login', render('partials/login'));
 

@@ -26,8 +26,11 @@
                 .state('article', {
                     url: '/article', templateUrl: '/templates/article'
                 })
-                .state('topic.javascript', {
-                    url: '/topic/javascript', templateUrl: '/topic/javascript'
+                .state('javascript', {
+                    url: '/topic/javascript', templateUrl: '/templates/topic/javascript'
+                })
+                .state('csharp', {
+                    url: '/topic/csharp', templateUrl: '/templates/topic/csharp'
                 });
         }]);
 

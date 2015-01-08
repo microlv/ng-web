@@ -6,12 +6,22 @@
 var express = require('express');
 var router = express.Router();
 
+var topicDao = require('../dao/index').topic;
+
 module.exports = {
-    count: function () {
-
+    groupTopic: function (req, res, next) {
+        topicDao.groupTopic(function (err, docs) {
+            console.log(docs);
+            res.send(docs);
+        });
     },
-    getTopicByType: function (type) {
-
+    getTopicByType: function (req, res, next) {
+        topicDao.getTopicByType(req, function (err, docs) {
+            if (err) {
+                next(err);
+            }
+            res.send(docs);
+        });
     },
     getTopicById: function (id) {
 

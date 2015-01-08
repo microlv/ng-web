@@ -1,10 +1,11 @@
 /**
- * Created by Andy.Lv on 2014/11/13.
+ * Created by Andy.Lv on 2015/1/8.
  */
+
 (function (angular) {
     'use strict';
 
-    angular.module('ngWeb').controller('topicController', ['$scope', '$http', 'topicItemSource',
+    angular.module('ngWeb').controller('topicDetailController', ['$scope', '$http', 'topicItemSource',
         function ($scope, $http, topicItemSource) {
             $scope.data = topicItemSource;
 
