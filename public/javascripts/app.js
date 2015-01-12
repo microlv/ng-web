@@ -30,10 +30,7 @@
                     url: url,
                     method: 'GET'
                 }).then(function (r) {
-                    //_.forEach(r.data, function (k) {
-                    //    $delegate.put(k);
-                    //});
-                    $injector('$compile')(r.data);
+                    $injector.get('$compile')(r.data);
                 });
             };
             return $delegate;
@@ -41,18 +38,7 @@
     }]);
 
     app.run(['$templateCache', '$http', '$compile', function ($templateCache, $http, $compile) {
-        $http({
-            url: 'layout/layout-template',
-            method: 'GET'
-        }).then(function (r) {
-            $compile(r.data);
-
-            //_.forEach(r.data, function (k) {
-            //    $templateCache.put(k);
-            //});
-        });
-
-        $templateCache.loadedTemplateUrl('/');
+        $templateCache.loadedTemplateUrl('/template/ng-template.html');
     }]);
 
 

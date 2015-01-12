@@ -48,11 +48,10 @@
             spanStyle: 'label label-success'
         }]);
 
-    angular.module('ngWeb').controller('topicController', ['$scope', '$http', 'topicItemSource',
-        function ($scope, $http, topicItemSource) {
+    angular.module('ngWeb').controller('topicController', ['$scope', 'platformHttpService', 'topicItemSource',
+        function ($scope, platformHttpService, topicItemSource) {
             $scope.data = topicItemSource;
-
-            $http.get('/api/topic/grouptopic').then(function (response) {
+            platformHttpService.getTopicGroup().then(function (response) {
                 if (response.status === 200) {
                     var t = $scope.data;
 

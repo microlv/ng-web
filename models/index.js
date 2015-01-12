@@ -9,7 +9,7 @@ var user = require('./user');
 var topic = require('./topic');
 
 mongoose.connect(config.dbconnect, function (err) {
-    if (err) throw err;
+    //if (err) throw err;
 });
 
 module.exports = {

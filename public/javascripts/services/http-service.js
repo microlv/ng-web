@@ -22,6 +22,9 @@
 
             getTopicDetail: function (type) {
                 return $http.get('/api/topic/' + type);
+            },
+            getTopicGroup: function () {
+                return $http.get('/api/topic/grouptopic');
             }
         };
     }]);
