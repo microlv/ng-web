@@ -24,7 +24,7 @@
     }]);
 
     app.config(['$provide', function ($provide) {
-        $provide.decorator('$templateCache', ['$http', '$delegate', '$compile', function ($http, $delegate, $compile) {
+        $provide.decorator('$templateCache', ['$http', '$delegate', '$injector', function ($http, $delegate, $injector) {
             $delegate.loadedTemplateUrl = function (url) {
                 $http({
                     url: url,
@@ -33,7 +33,7 @@
                     //_.forEach(r.data, function (k) {
                     //    $delegate.put(k);
                     //});
-                    $compile(r.data);
+                    $injector('$compile')(r.data);
                 });
             };
             return $delegate;
