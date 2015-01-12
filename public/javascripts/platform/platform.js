@@ -29,6 +29,18 @@
                 .state('javascript', {
                     url: '/topic/javascript', templateUrl: '/templates/topic/javascript'
                 })
+                .state('angularjs', {
+                    url: '/topic/angularjs', templateUrl: '/templates/topic/angularjs'
+                })
+                .state('nodejs', {
+                    url: '/topic/nodejs', templateUrl: '/templates/topic/nodejs'
+                })
+                .state('mongodb', {
+                    url: '/topic/mongodb', templateUrl: '/templates/topic/mongodb'
+                })
+                .state('sql', {
+                    url: '/topic/sql', templateUrl: '/templates/topic/sql'
+                })
                 .state('csharp', {
                     url: '/topic/csharp', templateUrl: '/templates/topic/csharp'
                 });

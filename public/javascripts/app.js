@@ -23,35 +23,37 @@
         cfpLoadingBarProvider.includeSpinner = false;
     }]);
 
-    //app.config(['$provide', function ($provide) {
-    //	$provide.decorator('$templateCache', ['$http', '$delegate', function ($http, $delegate) {
-    //		$delegate.loadedTemplateUrl = function (url) {
-    //			$http({
-    //				url: url,
-    //				method: 'GET'
-    //			}).then(function (r) {
-    //				_.forEach(r.data, function (k) {
-    //					$delegate.put(k);
-    //				});
-    //			});
-    //		};
-    //	}]);
-    //}]);
+    app.config(['$provide', function ($provide) {
+        $provide.decorator('$templateCache', ['$http', '$delegate', '$compile', function ($http, $delegate, $compile) {
+            $delegate.loadedTemplateUrl = function (url) {
+                $http({
+                    url: url,
+                    method: 'GET'
+                }).then(function (r) {
+                    //_.forEach(r.data, function (k) {
+                    //    $delegate.put(k);
+                    //});
+                    $compile(r.data);
+                });
+            };
+            return $delegate;
+        }]);
+    }]);
 
-    //app.run(['$templateCache', '$http', '$compile', function ($templateCache, $http, $compile) {
-    //	//$http({
-    //	//    url: 'layout/layout-template',
-    //	//    method: 'GET'
-    //	//}).then(function (r) {
-    //	//    $compile(r.data);
-    //	//
-    //	//    //_.forEach(r.data, function (k) {
-    //	//    //    $templateCache.put(k);
-    //	//    //});
-    //	//});
-    //	//
-    //	//$templateCache.loadedTemplateUrl('/');
-    //}]);
+    app.run(['$templateCache', '$http', '$compile', function ($templateCache, $http, $compile) {
+        $http({
+            url: 'layout/layout-template',
+            method: 'GET'
+        }).then(function (r) {
+            $compile(r.data);
+
+            //_.forEach(r.data, function (k) {
+            //    $templateCache.put(k);
+            //});
+        });
+
+        $templateCache.loadedTemplateUrl('/');
+    }]);
 
 
 })(angular);

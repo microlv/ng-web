@@ -7,6 +7,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compress = require('compression');
+var passport = require('passport');
+var passportGithub = require('passport-github');
+var GitHubStrategy = passportGithub.Strategy;
 
 var web_api = require('./web_api');
 var logic_api = require('./logic_api');
@@ -29,9 +32,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(compress());
 
 app.use('/', web_api);
-app.use('/api',logic_api);
-//app.use('/topic', logic_api.topic);
-//app.use('/auth', logic_api.auth);
+app.use('/api', logic_api);
+//
+//passport.use(new GitHubStrategy({
+//        clientID: GITHUB_CLIENT_ID,
+//        clientSecret: GITHUB_CLIENT_SECRET,
+//        callbackURL: "http://127.0.0.1:3000/auth/github/callback"
+//    },
+//    function (accessToken, refreshToken, profile, done) {
+//        //User.findOrCreate({githubId: profile.id}, function (err, user) {
+//        //    return done(err, user);
+//        //});
+//    }
+//));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

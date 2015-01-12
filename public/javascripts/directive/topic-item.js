@@ -5,15 +5,12 @@
 (function (angular) {
     'use strict';
 
-    angular.module('ngWeb').directive('topicItem', ['$templateCache', function ($templateCache) {
+    angular.module('ngWeb').directive('topicItem', ['$templateCache', 'topicItemSource', function ($templateCache, topicItemSource) {
         return {
             restrict: 'EA',
             template: $templateCache.get('topic-item.html'),
-            scope: {
-                itemSource: '='
-            },
             link: function (scope, ele, att) {
-
+                scope.itemSource = topicItemSource;
             }
         };
     }]);

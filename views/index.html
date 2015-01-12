@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 <head>
-	<title>ng-web</title>
-	<meta charset="UTF-8"/>
-	<meta name="fragment" content="!"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap-theme.min.css"/>
-	<!--<link rel="stylesheet" href="stylesheets/edu-login.css"/>-->
-	<link rel="stylesheet" href="stylesheets/edu-style.css"/>
-	<link rel="stylesheet" href="stylesheets/edu-media.css"/>
-	<link rel="stylesheet" href="stylesheets/font-awesome/css/font-awesome.css"/>
+    <title>ng-web</title>
+    <meta charset="UTF-8"/>
+    <meta name="fragment" content="!"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <!--<link rel="stylesheet" href="stylesheets/edu-login.css"/>-->
+    <link rel="stylesheet" href="stylesheets/edu-style.css"/>
+    <link rel="stylesheet" href="stylesheets/edu-media.css"/>
+    <link rel="stylesheet" href="stylesheets/font-awesome/css/font-awesome.css"/>
 
-	<link rel="stylesheet" href="libs/angular-loading-bar/build/loading-bar.min.css"/>
+    <link rel="stylesheet" href="libs/angular-loading-bar/build/loading-bar.min.css"/>
 </head>
-<body ng-controller="mainframeController">
+<body data-ng-controller="mainframeController">
 
 <div data-layout-header></div>
-<div data-layout-sidebar data-item-source="topicItemSource"></div>
+<div data-layout-sidebar></div>
 <div data-layout-search></div>
 <div data-layout-content></div>
 <div data-layout-footer></div>
@@ -40,18 +40,25 @@
 <script src="libs/ng-message/ngMessage.js"></script>
 
 <!--user libs-->
+<!--platform-->
 <script src="javascripts/app.js"></script>
 <script src="javascripts/platform/ng-web.js"></script>
 <script src="javascripts/platform/platform.js"></script>
 <script src="javascripts/platform/authentication.js"></script>
+
+<!--services-->
 <script src="javascripts/services/dialog-service.js"></script>
+<script src="javascripts/services/http-service.js"></script>
+
+<!--controller-->
 <script src="javascripts/controller/topic-controller.js"></script>
 <script src="javascripts/controller/topic-detail-controller.js"></script>
 <script src="javascripts/controller/mainframe-controller.js"></script>
 <script src="javascripts/controller/login-controller.js"></script>
+
+<!--directive-->
 <script src="javascripts/directive/layout.js"></script>
 <script src="javascripts/directive/topic-item.js"></script>
-
 
 </body>
 </html>

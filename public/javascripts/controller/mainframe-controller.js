@@ -5,54 +5,7 @@
 (function (angular) {
     'use strict';
 
-    angular.module('ngWeb').value('topicItemSource', [
-        {
-            topic: 'Javascript',
-            liStyle: 'bg_lg span3',
-            uiSref: 'javascript',
-            iStyle: 'icon-signal',
-            spanStyle: 'label label-success'
-        },
-        {
-            topic: 'Angularjs',
-            liStyle: 'bg_lb',
-            uiSref: 'topic.angularjs',
-            iStyle: 'icon-dashboard',
-            spanStyle: 'label label-success'
-        },
-        {
-            topic: 'NodeJS',
-            liStyle: 'bg_ly span2',
-            uiSref: 'topic.nodejs',
-            iStyle: 'icon-inbox',
-            spanStyle: 'label label-success'
-        },
-        {
-            topic: 'C#',
-            liStyle: 'bg_lo span3',
-            uiSref: 'csharp',
-            iStyle: 'icon-th',
-            spanStyle: 'label label-success'
-        },
-        {
-            topic: 'MongoDB',
-            liStyle: 'bg_ls',
-            uiSref: 'topic.mongodb',
-            iStyle: 'icon-fullscreen',
-            spanStyle: 'label label-success'
-        },
-        {
-            topic: 'SQL',
-            liStyle: 'bg_lo',
-            uiSref: 'topic.sql',
-            iStyle: 'icon-th-list',
-            spanStyle: 'label label-success'
-        }]);
+    angular.module('ngWeb').controller('mainframeController', ['$scope', function ($scope) {
 
-    angular.module('ngWeb').controller('mainframeController', ['$scope', 'topicItemSource',
-        function ($scope, topicItemSource) {
-
-            $scope.topicItemSource = topicItemSource;
-
-        }]);
+    }]);
 })(angular);

@@ -26,14 +26,12 @@
                 template: $templateCache.get('layout-footer.html')
             };
         }])
-        .directive('layoutSidebar', ['$templateCache', function ($templateCache) {
+        .directive('layoutSidebar', ['$templateCache', 'topicItemSource', function ($templateCache, topicItemSource) {
             return {
                 restrict: 'EA',
                 template: $templateCache.get('layout-sidebar.html'),
-                scope: {
-                    itemSource: '='
-                },
                 link: function (scope, ele, att) {
+                    scope.itemSource = topicItemSource;
                 }
             };
         }])

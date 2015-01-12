@@ -5,21 +5,13 @@
 (function (angular) {
     'use strict';
 
-    angular.module('ngWeb').controller('loginController', ['$scope', '$http',
-        function ($scope, $http) {
+    angular.module('ngWeb').controller('loginController', ['$scope', 'platformHttpService',
+        function ($scope, platformHttpService) {
             $scope.ok = function () {
-                $http({
-                    method: 'POST',
-                    url: '/api/auth/reg',
-                    data: {
-                        username: $scope.username,
-                        password: $scope.password
-                    }
-                }).then(function (response) {
+                platformHttpService.login($scope.username, $scope.password)
+                    .then(function (res) {
 
-                }, function () {
-
-                });
+                    });
             };
             $scope.cancel = function () {
             };

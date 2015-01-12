@@ -16,7 +16,7 @@ module.exports = {
         });
     },
     getTopicByType: function (req, res, next) {
-        topicDao.getTopicByType(req, function (err, docs) {
+        topicDao.getTopicByType(req.params.type, function (err, docs) {
             if (err) {
                 next(err);
             }

@@ -18,8 +18,8 @@ module.exports = {
             }], cb);
         console.log(data);
     },
-    getTopicByType: function (cb) {
-        Topic.find({type:'C#'}, cb);
+    getTopicByType: function (type, cb) {
+        Topic.find({type: type}, cb);
     }
 };
 
