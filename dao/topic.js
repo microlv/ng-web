@@ -8,14 +8,14 @@ var Topic = require('../models').Topic;
 
 module.exports = {
     groupTopic: function (cb) {
-        //var data = Topic.aggregate([
-        //    {$project: {type: 1}},
-        //    {
-        //        $group: {
-        //            _id: '$type',
-        //            count: {$sum: 1}
-        //        }
-        //    }], cb);
+        var data = Topic.aggregate([
+            {$project: {type: 1}},
+            {
+                $group: {
+                    _id: '$type',
+                    count: {$sum: 1}
+                }
+            }], cb);
         //console.log(data);
     },
     getTopicByType: function (type, cb) {

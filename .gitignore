@@ -1,5 +1,8 @@
 no# Created by .gitignore support plugin (hsz.mobi)
 ### Node template
+config.js
+public/libs/font-awesome/*
+
 # Logs
 logs
 *.log
@@ -30,4 +33,4 @@ build/Release
 node_modules
 *.stackdump
 
-config.js
+

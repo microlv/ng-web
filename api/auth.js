@@ -25,5 +25,8 @@ module.exports = {
             }
             res.send('auth success');
         });
+    },
+    github: function () {
+
     }
 };

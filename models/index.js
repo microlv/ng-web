@@ -8,7 +8,7 @@ var config = require('../config');
 var user = require('./user');
 var topic = require('./topic');
 
-mongoose.connect(config.dbconnect, function (err) {
+mongoose.connect(process.env.MONGOLAB_URI || config.dbconnect, function (err) {
     //if (err) throw err;
 });
 
