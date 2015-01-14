@@ -40,7 +40,7 @@
             '       <i class="icon icon-home"></i> Dashboard' +
             '   </a>' +
             '   <ul>' +
-            '      <li data-ng-repeat="item in itemSource">' +
+            '      <li data-ng-repeat="item in layoutSidebarItemSource">' +
             '          <a data-ui-sref="{{item.uiSref}}">' +
             '              <i class="icon" data-ng-class="item.iStyle"></i>' +
             '              <span> {{item.topic}}</span>' +

@@ -14,11 +14,11 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/topic/grouptopic', topic.groupTopic);
-router.get('/topic/:type', topic.getTopicByType);
-router.get('/topic/:type/:id', topic.getTopicById);
+router.get('/topic/:category', topic.getTopic);
+router.get('/topic/:category/:id', topic.getTopicById);
 
-router.post('/auth/login', auth.login);
-router.post('/auth/reg', auth.reg);
+//router.post('/auth/login', auth.login);
+//router.post('/auth/reg', auth.reg);
 router.get('/auth/github', github.githubAuth());
 router.get('/auth/github/callback', github.githubAuth({failureRedirect: '/'}), github.githubCallback);
 

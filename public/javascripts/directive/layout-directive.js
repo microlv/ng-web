@@ -31,7 +31,7 @@
                 restrict: 'EA',
                 template: $templateCache.get('layout-sidebar.html'),
                 link: function (scope, ele, att) {
-                    scope.itemSource = topicItemSource;
+                    scope.layoutSidebarItemSource = topicItemSource;
                 }
             };
         }])

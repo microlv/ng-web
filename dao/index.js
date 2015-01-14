@@ -9,6 +9,6 @@ var topic = require('./topic');
 
 module.exports = {
     user: user,
-    topic:topic
+    topic: topic
 };
 
