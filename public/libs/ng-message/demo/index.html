@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../ngMessage.js"></script>
+    <script src="app.js"></script>
+    <script src="factory.js"></script>
+</head>
+<body>
+
+<div data-ng-controller="controller1">
+    <a href="" data-ng-message data-msg-name="demoFactoryOnMessage">fire factory message</a>
+</div>
+<br/>
+
+<div data-ng-controller="controller2">
+    <a href="" ng-click="click()">click</a>
+    <a href="" ng-click="remove()">remove</a>
+</div>
+
+<div data-ng-controller="controller3">
+</div>
+
+<br/>
+
+<div data-ng-message data-msg-name="directive.1" style="background-color: #999">
+    directive 1 click test
+</div>
+
+<br/>
+
+<div data-ng-message data-msg-name="directive.2" data-msg-type="dblclick" style="background-color: #999">
+    directive 2 dblclick test
+</div>
+</body>
+</html>

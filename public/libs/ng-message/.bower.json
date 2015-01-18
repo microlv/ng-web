@@ -1,6 +1,6 @@
 {
   "name": "ngMessage",
-  "homepage": "https://github.com/lvjianyu/ngMessage",
+  "homepage": "https://github.com/microlv/ngMessage",
   "authors": [
     "andy.lv <andy.lv@live.com>"
   ],
@@ -26,13 +26,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/lvjianyu/ngMessage.git"
+    "url": "git://github.com/microlv/ngMessage.git"
   },
-  "_release": "0056f31de4",
+  "_release": "0bfefaea16",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "0056f31de45976fb0f175f1453a8376cf090137c"
+    "commit": "0bfefaea16adb213bed507357dd6c986fc7c2dc7"
   },
   "_source": "git://github.com/lvjianyu/ngMessage.git",
   "_target": "*",

@@ -20,11 +20,11 @@
                 });
             },
 
-            getTopicDetail: function (type) {
-                return $http.get('/api/topic/' + type);
+            getTopicDetail: function (category) {
+                return $http.get('/api/topics/' + category);
             },
             getTopicGroup: function () {
-                return $http.get('/api/topic/grouptopic');
+                return $http.get('/api/topics/grouptopics');
             }
         };
     }]);

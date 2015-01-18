@@ -10,12 +10,12 @@ var ObjectId = Schema.ObjectId;
 
 var topicSchema = new Schema({
     category: {type: String},
-    //authorId: {type: ObjectId},
+    authorId: {type: ObjectId},
     title: {type: String},
     content: {type: String},
-    visit_count: {type: Number, default: 0},
-    insert_at: {type: Date, default: Date.now},
-    update_at: {type: Date, default: Date.now}
+    visitCount: {type: Number, default: 0},
+    insertAt: {type: Date, default: Date.now},
+    updateAt: {type: Date, default: Date.now}
 });
 
-mongoose.model('Topic', topicSchema);
+mongoose.model('Topics', topicSchema);

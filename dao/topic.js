@@ -4,27 +4,25 @@
 
 'use strict';
 
-var Topic = require('../models').Topic;
-var User = require('../models').User;
+var Topics = require('../models').Topics;
+
 module.exports = {
-    groupTopic: function (callback) {
-        var data = Topic.aggregate([
-            {$project: {type: 1}},
+    groupTopics: function (callback) {
+        var data = Topics.aggregate([
+            {
+                $project: {category: 1}
+            },
             {
                 $group: {
-                    _id: '$type',
+                    _id: '$category',
                     count: {$sum: 1}
                 }
             }], callback);
-        //console.log(data);
     },
-    getTopic: function (category, callback) {
-
-        User.find({}, function (err, docs) {
-            console.log(docs);
-        });
-        Topic.find({}, function (err, docs) {
-            console.log(docs);
-        });
+    getTopicsCategory: function (category, callback) {
+        Topics.find({}, callback);
+    },
+    getTopicsById: function (id, callback) {
+        Topics.find({_id: id}, callback);
     }
 };

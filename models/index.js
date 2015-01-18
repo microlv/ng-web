@@ -6,7 +6,7 @@
 var mongoose = require('mongoose');
 var config = require('../config');
 var user = require('./user');
-var topic = require('./topic');
+var topic = require('./topics');
 
 mongoose.connect(process.env.MONGOLAB_URI || config.dbconnect, function (err) {
     //if (err) throw err;
@@ -14,5 +14,5 @@ mongoose.connect(process.env.MONGOLAB_URI || config.dbconnect, function (err) {
 
 module.exports = {
     User: mongoose.model('User'),
-    Topic: mongoose.model('Topic')
+    Topics: mongoose.model('Topics')
 };

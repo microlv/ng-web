@@ -4,7 +4,7 @@
 
 'use strict';
 
-var topic = require('./controller/topic');
+var topics = require('./controller/topics');
 var auth = require('./api/auth');
 var passport = require('passport');
 var github = require('./middlewares/github');
@@ -13,9 +13,9 @@ var github = require('./middlewares/github');
 var express = require('express');
 var router = express.Router();
 
-router.get('/topic/grouptopic', topic.groupTopic);
-router.get('/topic/:category', topic.getTopic);
-router.get('/topic/:category/:id', topic.getTopicById);
+router.get('/topics/grouptopics', topics.groupTopics);
+router.get('/topics/:category', topics.getTopicsCategory);
+router.get('/topics/:category/:id', topics.getTopicsById);
 
 //router.post('/auth/login', auth.login);
 //router.post('/auth/reg', auth.reg);

@@ -9,7 +9,9 @@
         function ($scope, platformHttp) {
             //testing.
             platformHttp.getTopicDetail('javascript').then(function (res) {
-                $scope.itemSource = [];
+                if (res.status === 200) {
+                    $scope.itemSource = res.data;
+                }
             });
         }]);
 

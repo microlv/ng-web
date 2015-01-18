@@ -1,7 +1,7 @@
 {
   "name": "ngMessage",
-  "version": "1.0.1",
-  "homepage": "https://github.com/lvjianyu/ngMessage",
+  "version": "1.0.5",
+  "homepage": "https://github.com/microlv/ngMessage",
   "authors": [
 	"andy.lv <andy.lv@live.com>"
   ],
@@ -27,6 +27,6 @@
   },
   "repository": {
 	"type": "git",
-	"url": "git://github.com/lvjianyu/ngMessage.git"
+	"url": "git://github.com/microlv/ngMessage.git"
   }
 }
