@@ -6,7 +6,7 @@
 var express = require('express');
 var router = express.Router();
 
-var topicDao = require('../dao/index').topic;
+var topicDao = require('../dao/index').topics;
 
 module.exports = {
     groupTopics: function (req, res, next) {

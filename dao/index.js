@@ -5,10 +5,10 @@
 'use strict';
 
 var user = require('./user');
-var topic = require('./topic');
+var topics = require('./topics');
 
 module.exports = {
     user: user,
-    topic: topic
+    topics: topics
 };
 
