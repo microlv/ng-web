@@ -23,8 +23,8 @@ module.exports = {
             res.send(docs);
         });
     },
-    getTopicsById: function (req, res, next) {
-        topicDao.getTopicsById({_id: req.params.id}, function (err, docs) {
+    getArticleById: function (req, res, next) {
+        topicDao.getArticleById({_id: req.params.id}, function (err, docs) {
             if (err) {
                 next(err);
             }

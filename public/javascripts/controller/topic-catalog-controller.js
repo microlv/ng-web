@@ -5,7 +5,7 @@
 (function (angular) {
     'use strict';
 
-    angular.module('ngWeb').controller('topicDetailController', ['$scope', 'platformHttpService',
+    angular.module('ngWeb').controller('topicCatalogController', ['$scope', 'platformHttpService',
         function ($scope, platformHttp) {
             //testing.
             platformHttp.getTopicDetail('javascript').then(function (res) {

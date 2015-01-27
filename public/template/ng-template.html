@@ -49,22 +49,27 @@
     </div>
 </script>
 
-<script type="text/ng-template" id="topic-detail-id.html">
+<script type="text/ng-template" id="topic-catalog.html">
     <div class="widget-content nopadding collapse in">
         <ul class="recent-posts">
             <li data-ng-repeat="item in itemSource">
-                <!--<div class="user-thumb">-->
-                    <!--<img width="40" height="40" alt="User" src="img/demo/av1.jpg">-->
-                <!--</div>-->
-                <div class="article-post">
-                    <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
-                    <p>
-                        <a data-ui-sref="article">This is a much longer one that will go on for a few lines.It has multiple paragraphs
-                            and is full of waffle to pad out the comment.
-                        </a>
-                    </p>
-                </div>
+                <div data-article-item data-item="item"></div>
             </li>
         </ul>
+    </div>
+</script>
+
+<script type="text/ng-template" id="article-item.html">
+    <div>
+        <div class="user-thumb">
+            <span style="width:40px;height: 50px">{{item.visitCount}}</span>
+        </div>
+        <div class="article-post">
+            <span class="user-info"> By: microlv / {{item.updateAt}} </span>
+
+            <p>
+                <a data-ng-href="article({id:'54bb4ffddf9fe31a80e374d0'})">{{item.title}}</a>
+            </p>
+        </div>
     </div>
 </script>
