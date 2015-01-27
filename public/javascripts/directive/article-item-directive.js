@@ -5,7 +5,7 @@
 (function (angular) {
     'use strict';
 
-    angular.module('ngWeb').directive('articleItem', ['$templateCache', function ($templateCache) {
+    angular.module('ngWeb').directive('articleItem', ['$templateCache', '$state', function ($templateCache, $state) {
         return {
             restrict: 'EA',
             scope: {
@@ -13,6 +13,7 @@
             },
             template: $templateCache.get('article-item.html'),
             link: function (scope, ele, att) {
+                scope.item.href = $state.href('article', {id: scope.item._id});
             }
         };
     }]);

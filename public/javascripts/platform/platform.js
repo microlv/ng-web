@@ -21,7 +21,7 @@
                     url: '/topic', templateUrl: '/templates/topic'
                 })
                 .state('article', {
-                    url: '/article/:category/:id', templateUrl: '/templates/article'
+                    url: '/article/:id', templateUrl: '/templates/article'
                 })
                 .state('about', {
                     url: '/about', templateUrl: '/templates/about'

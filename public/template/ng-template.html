@@ -49,7 +49,7 @@
     </div>
 </script>
 
-<script type="text/ng-template" id="topic-catalog.html">
+<script type="text/ng-template" id="topic-category.html">
     <div class="widget-content nopadding collapse in">
         <ul class="recent-posts">
             <li data-ng-repeat="item in itemSource">
@@ -68,7 +68,7 @@
             <span class="user-info"> By: microlv / {{item.updateAt}} </span>
 
             <p>
-                <a data-ng-href="article({id:'54bb4ffddf9fe31a80e374d0'})">{{item.title}}</a>
+                <a data-ng-href="{{item.href}}">{{item.title}}</a>
             </p>
         </div>
     </div>
