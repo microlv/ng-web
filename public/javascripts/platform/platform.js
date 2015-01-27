@@ -11,20 +11,20 @@
     platform.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
         function ($stateProvider, $urlRouterProvider, $locationProvider) {
             //$locationProvider.html5Mode(true);
-            $urlRouterProvider.otherwise('/topic');
+            $urlRouterProvider.otherwise('topic');
 
             $stateProvider
-                .state('index', {
-                    url: '/topic', templateUrl: '/templates/topic'
-                })
-                .state('about', {
-                    url: '/about', templateUrl: '/templates/about'
-                })
+                //.state('index', {
+                //    url: '/topic', templateUrl: '/templates/topic'
+                //})
                 .state('topic', {
                     url: '/topic', templateUrl: '/templates/topic'
                 })
                 .state('article', {
-                    url: '/article', templateUrl: '/templates/article'
+                    url: '/article/:category/:id', templateUrl: '/templates/article'
+                })
+                .state('about', {
+                    url: '/about', templateUrl: '/templates/about'
                 })
                 .state('javascript', {
                     url: '/topic/javascript', templateUrl: '/templates/topic/javascript'

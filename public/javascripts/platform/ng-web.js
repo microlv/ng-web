@@ -28,9 +28,10 @@
 
         var layoutFooterHtml =
             '<div class="row-fluid">' +
-            '   <div id="footer" class="span12"> 2014-2015 &copy;Web design by ' +
+            '   <div id="footer" class="span12"> 2014-2015 &copy;Web design by microlv' +
             '       <a href="https://github.com/microlv/" target="_blank">[microlv]</a>' +
-            '       <a href="mailto:andy.lv@live.com">email:[andy.lv]</a>' +
+            '       fork me on github:' +
+            '       <a href="https://github.com/microlv/" target="_blank">[microlv]</a>' +
             '   </div>' +
             '</div>';
 
