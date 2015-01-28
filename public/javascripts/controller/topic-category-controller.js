@@ -5,14 +5,14 @@
 (function (angular) {
     'use strict';
 
-    angular.module('ngWeb').controller('topicCategoryController', ['$scope', 'platformHttpService',
-        function ($scope, platformHttp) {
+    angular.module('ngWeb').controller('topicCategoryController', ['$scope', '$http',
+        function ($scope, $http) {
             //testing.
-            platformHttp.getTopicDetail('javascript').then(function (res) {
-                if (res.status === 200) {
-                    $scope.itemSource = res.data;
-                }
-            });
+            //platformHttp.getTopicDetail('javascript').then(function (res) {
+            //    if (res.status === 200) {
+            //        $scope.itemSource = res.data;
+            //    }
+            //});
         }]);
 
 })(angular);

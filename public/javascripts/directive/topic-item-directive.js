@@ -5,14 +5,18 @@
 (function (angular) {
     'use strict';
 
-    angular.module('ngWeb').directive('topicItem', ['$templateCache', 'topicItemSource', function ($templateCache, topicItemSource) {
-        return {
-            restrict: 'EA',
-            template: $templateCache.get('topic-item.html'),
-            link: function (scope, ele, att) {
-                scope.itemSource = topicItemSource;
-            }
-        };
-    }]);
+    angular.module('ngWeb').directive('topicItems', ['$templateCache', 'topicItemSource', '$state',
+        function ($templateCache, topicItemSource, $state) {
+            return {
+                restrict: 'EA',
+                template: $templateCache.get('topic-items.html'),
+                link: function (scope, ele, att) {
+                    _.forEach(topicItemSource, function (k) {
+                        k.href = $state.href('category', {category: k.uiSref});
+                    });
+                    scope.itemSource = topicItemSource;
+                }
+            };
+        }]);
 
 })(angular);
