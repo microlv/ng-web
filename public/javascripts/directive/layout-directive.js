@@ -26,11 +26,14 @@
                 template: $templateCache.get('layout-footer.html')
             };
         }])
-        .directive('layoutSidebar', ['$templateCache', 'topicItemSource', function ($templateCache, topicItemSource) {
+        .directive('layoutSidebar', ['$templateCache', '$state', 'topicItemSource', function ($templateCache, $state, topicItemSource) {
             return {
                 restrict: 'EA',
                 template: $templateCache.get('layout-sidebar.html'),
                 link: function (scope, ele, att) {
+                    _.forEach(topicItemSource, function (k) {
+                        k.href = $state.href('category', {category: k.uiSref});
+                    });
                     scope.layoutSidebarItemSource = topicItemSource;
                 }
             };

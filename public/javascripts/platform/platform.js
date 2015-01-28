@@ -24,7 +24,7 @@
                     url: '/about', templateUrl: '/templates/about'
                 })
                 .state('category', {
-                    url: '/topic/:category', templateUrl: '/templates/topic/category'
+                    url: '/topic/:category', templateUrl: '/templates/topic/topic-category'
                 });
         }]);
 

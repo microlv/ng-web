@@ -51,7 +51,7 @@
         .run(['$templateCache', function ($templateCache) {
 
             var layoutHeaderHtml =
-                '<div style="height: 87px">' +
+                '<div style="height: 81px">' +
                 '   <div id="user-nav" class="navbar navbar-inverse">' +
                 '       <ul class="nav">' +
                 '           <li>' +

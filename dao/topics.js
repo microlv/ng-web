@@ -20,7 +20,7 @@ module.exports = {
             }], callback);
     },
     getTopicsCategory: function (category, callback) {
-        Topics.find({}, '_id category title visitCount updateAt', callback);
+        Topics.find(category, '_id category title visitCount updateAt', callback);
     },
     getArticleById: function (id, callback) {
         Topics.find({_id: id}, callback);

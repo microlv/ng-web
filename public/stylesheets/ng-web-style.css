@@ -201,6 +201,7 @@ hr {
     top: 0;
     /*z-index: 20;*/
     margin: 0;
+    border-radius: 0;
 }
 
 #user-nav > ul {

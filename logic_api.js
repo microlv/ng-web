@@ -5,7 +5,6 @@
 'use strict';
 
 var topics = require('./controller/topics');
-var auth = require('./api/auth');
 var passport = require('passport');
 var github = require('./middlewares/github');
 
