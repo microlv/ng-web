@@ -34,7 +34,7 @@ function githubCallback(req, res, next) {
     // Successful authentication, redirect home.
     var profile = req.user;
 
-    userDao.findOne({githubId: profile.id}, function (err, user) {
+    userDao.findOne({id: profile.id}, function (err, user) {
         if (err) {
             return next(err);
         }
@@ -51,9 +51,9 @@ function githubCallback(req, res, next) {
                 return res.redirect('/');
             });
         } else {
-            // 如果用户还未存在，则建立新用户
-            req.session.profile = profile;
-            return res.redirect('/auth/github/new');
+            //// 如果用户还未存在，则建立新用户
+            //req.session.profile = profile;
+            //return res.redirect('/auth/github/new');
         }
     });
     //console.log(req.session.user);

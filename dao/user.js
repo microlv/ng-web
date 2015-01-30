@@ -15,8 +15,5 @@ module.exports = {
         var user = new User();
         _.extend(user, obj);
         user.save(cb);
-    },
-    findOrCreate: function (obj, cb) {
-
     }
 };
