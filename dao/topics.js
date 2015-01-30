@@ -5,6 +5,7 @@
 'use strict';
 
 var Topics = require('../models').Topics;
+var $l = require('livejs');
 
 module.exports = {
     groupTopics: function (callback) {
@@ -24,5 +25,13 @@ module.exports = {
     },
     getArticleById: function (id, callback) {
         Topics.find({_id: id}, callback);
+    },
+    save: function (entity) {
+        var topic = new Topics();
+        $l.extend(topic, entity);
+
+        console.log(topic);
+
+        //topic.save();
     }
 };

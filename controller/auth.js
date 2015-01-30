@@ -4,7 +4,7 @@
 
 'use strict';
 
-var user = require('../dao/index').user;
+var user = require('../dao').user;
 
 module.exports = {
     login: function (req, res, next) {

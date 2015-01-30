@@ -39,8 +39,10 @@
             <!--</div>-->
             <!--</div>-->
             <!--</div>-->
-            <a href="/api/auth/github">使用GitHub</a>
-            <a href="#">使用QQ</a>
+            <a href="/api/auth/github">
+                <div><img src="/images/github.png"/></div>
+                <div><span>使用GitHub</span></div>
+            </a>
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" data-ng-click="ok()">OK</button>
@@ -71,5 +73,11 @@
                 <a data-ng-href="{{item.href}}">{{item.title}}</a>
             </p>
         </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="edit-post.html">
+    <div>
+
     </div>
 </script>

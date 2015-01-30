@@ -8,6 +8,8 @@ var passport = require('passport');
 var passportGithub = require('passport-github');
 var GitHubStrategy = passportGithub.Strategy;
 var config = require('../config');
+var userDao = require('../dao').user;
+
 
 function githubStrategy() {
     return new GitHubStrategy({
@@ -28,10 +30,34 @@ function githubAuth(config) {
     return passport.authenticate('github');
 }
 
-function githubCallback(req, res) {
-    //req.session.user = {name: req.user.username, head: ''};
+function githubCallback(req, res, next) {
+    // Successful authentication, redirect home.
+    var profile = req.user;
+
+    userDao.findOne({githubId: profile.id}, function (err, user) {
+        if (err) {
+            return next(err);
+        }
+        // 当用户已经是 cnode 用户时，通过 github 登陆将会更新他的资料
+        if (user) {
+            user.username = profile.username;
+            user.avatar = profile._json.avatar_url;
+
+            userDao.save(function (err) {
+                if (err) {
+                    return next(err);
+                }
+                authMiddleWare.gen_session(user, res);
+                return res.redirect('/');
+            });
+        } else {
+            // 如果用户还未存在，则建立新用户
+            req.session.profile = profile;
+            return res.redirect('/auth/github/new');
+        }
+    });
     //console.log(req.session.user);
-    //res.redirect('/');
+    res.redirect('/');
 }
 
 module.exports = {

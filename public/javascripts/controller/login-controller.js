@@ -19,8 +19,10 @@
 
                 });
             };
+
             $scope.cancel = function () {
             };
+
         }]);
 
 })(angular);

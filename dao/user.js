@@ -5,26 +5,18 @@
 'use strict';
 var User = require('../models').User;
 var crypto = require('crypto');
+var _ = require('lodash');
 
 module.exports = {
-    auth: function (username, password, callback) {
-        User.find({username: username, password: password}, callback);
+    findOne: function (obj, cb) {
+        User.findOne(obj, cb);
     },
-    find: function (obj, callback) {
-        User.find(obj, callback);
+    save: function (obj, cb) {
+        var user = new User();
+        _.extend(user, obj);
+        user.save(cb);
     },
-    reg: function (username, password, callback) {
-        var md5 = crypto.createHash('md5');
-        password = md5.update(password).digest('hex');
+    findOrCreate: function (obj, cb) {
 
-        //this.find({username: username}, function () {
-        //
-        //});
-        var newUser = new User();
-
-        newUser.username = username;
-        newUser.password = password;
-
-        newUser.save(callback);
     }
 };

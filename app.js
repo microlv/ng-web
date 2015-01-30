@@ -6,9 +6,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var compress = require('compression');
+var compression = require('compression');
+
 var passport = require('passport');
 var github = require('./middlewares/github');
+var session = require('express-session');
+var connectMongo = require('connect-mongo')(session);
 
 var web_api = require('./web_api');
 var logic_api = require('./logic_api');
@@ -28,7 +31,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(compress());
+app.use(compression({
+    threshold: 512
+}))
+
+app.use(session({
+    secret: config.session_secret,
+    store: new connectMongo({
+        url: config.dbconnect
+    }),
+    resave: true,
+    saveUninitialized: true
+}));
 
 app.use(passport.initialize());
 

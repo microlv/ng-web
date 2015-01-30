@@ -6,12 +6,14 @@
 var express = require('express');
 var router = express.Router();
 
-var topicDao = require('../dao/index').topics;
+var topicDao = require('../dao').topics;
 
 module.exports = {
     groupTopics: function (req, res, next) {
         topicDao.groupTopics(function (err, docs) {
-            console.log(docs);
+            if (err) {
+                next(err);
+            }
             res.send(docs);
         });
     },
@@ -25,6 +27,16 @@ module.exports = {
     },
     getArticleById: function (req, res, next) {
         topicDao.getArticleById({_id: req.params.id}, function (err, docs) {
+            if (err) {
+                next(err);
+            }
+            res.send(docs);
+        });
+    },
+    postArticle: function (req, res, next) {
+        //before save, need validation
+
+        topicDao.save({_id: req.params.id}, function (err, docs) {
             if (err) {
                 next(err);
             }
