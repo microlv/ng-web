@@ -34,26 +34,24 @@ function githubCallback(req, res, next) {
     // Successful authentication, redirect home.
     var profile = req.user;
 
-    userDao.findOrCreate({id: profile.id}, function (err, user) {
+    userDao.findOne({id: profile.id}, function (err, user) {
         if (err) {
             return next(err);
         }
-        // 当用户已经是 cnode 用户时，通过 github 登陆将会更新他的资料
         if (user) {
             user.username = profile.username;
             user.avatar = profile._json.avatar_url;
+            user.email = profile.email;
+            user.profileUrl = profile.profileUrl;
+            user.provider = profile.provider;
 
-            userDao.save(function (err) {
+            user.save(function (err) {
                 if (err) {
                     return next(err);
                 }
                 auth.encryptSession(user, res);
                 return res.redirect('/');
             });
-        } else {
-            //// 如果用户还未存在，则建立新用户
-            //req.session.profile = profile;
-            //return res.redirect('/auth/github/new');
         }
     });
     //console.log(req.session.user);

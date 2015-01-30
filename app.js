@@ -38,7 +38,7 @@ app.use(compression({
 app.use(session({
     secret: config.session_secret,
     store: new connectMongo({
-        url: config.dbconnect
+        url: process.env.MONGOLAB_URI || config.dbconnect
     }),
     resave: true,
     saveUninitialized: true
