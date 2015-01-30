@@ -9,6 +9,7 @@ var crypto = require('crypto');
 var user = require('../dao').user;
 var config = require('../config');
 
+//blow code copy from cnode
 function encrypt(str, secret) {
     var cipher = crypto.createCipher('aes192', secret);
     var enc = cipher.update(str, 'utf8', 'hex');

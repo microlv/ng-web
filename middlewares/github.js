@@ -34,7 +34,7 @@ function githubCallback(req, res, next) {
     // Successful authentication, redirect home.
     var profile = req.user;
 
-    userDao.findOne({id: profile.id}, function (err, user) {
+    userDao.findOrCreate({id: profile.id}, function (err, user) {
         if (err) {
             return next(err);
         }
