@@ -9,7 +9,7 @@ var passportGithub = require('passport-github');
 var GitHubStrategy = passportGithub.Strategy;
 var config = require('../config');
 var userDao = require('../dao').user;
-
+var auth = require('./auth');
 
 function githubStrategy() {
     return new GitHubStrategy({
@@ -47,7 +47,7 @@ function githubCallback(req, res, next) {
                 if (err) {
                     return next(err);
                 }
-                authMiddleWare.gen_session(user, res);
+                auth.encryptSession(user, res);
                 return res.redirect('/');
             });
         } else {

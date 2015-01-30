@@ -9,9 +9,11 @@ var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
     id: {type: String},
-    email: {type: String},
     username: {type: String},
-    password: {type: String}
+    email: {type: String},
+    avatar: {type: String},
+    profileUrl:{type: String},
+    provider: {type: String}
 });
 
 mongoose.model('User', userSchema);
