@@ -9,21 +9,28 @@ use angularjs,nodejs,mongodb,build for single page application web blog.
 
 
 ## Download
-
-Check out [https://github.com/microlv/ng-web.git] for details over the differences between builds.
-
+```
+Check out [https://github.com/microlv/ng-web.git]
+for details over the differences between builds.
 Wiki: http://microlv.github.io/ng-web   (not finished)
-
+```
 ## Features
 
 使用时下流行的angularjs打造, 数据库使用mongodb, 服务器使用nodejs.
-不同于angularjs社区所使用的jade模板生成html, 本站全部使用原生html/js, 不使用第三方生成模板库。
+不同于angularjs社区所使用的jade模板生成html, 本站全部使用原生html/js。
 
 ## Support
 
 Currently only test in Chrome, require angularjs
 
 ## Installation & usage
+
+```
+
+1.安装依赖：npm install
+2.跑程序：node app.js
+
+```
 
 
 ## Author
