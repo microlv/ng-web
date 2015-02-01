@@ -10,6 +10,7 @@ var GitHubStrategy = passportGithub.Strategy;
 var config = require('../config');
 var userDao = require('../dao').user;
 var auth = require('./auth');
+var $l = require('livejs');
 
 function githubStrategy() {
     return new GitHubStrategy({
@@ -34,28 +35,38 @@ function githubCallback(req, res, next) {
     // Successful authentication, redirect home.
     var profile = req.user;
 
-    userDao.findOne({id: profile.id}, function (err, user) {
-        if (err) {
-            return next(err);
-        }
+    $l(function (d) {
+        userDao.findOne({githubid: profile.id}, function (err, user) {
+            if (err) {
+                return next(err);
+            }
+            d.resolve(user);
+        });
+    }).then(function (d, user) {
         if (user) {
             user.username = profile.username;
             user.avatar = profile._json.avatar_url;
             user.email = profile.email;
             user.profileUrl = profile.profileUrl;
             user.provider = profile.provider;
-
             user.save(function (err) {
                 if (err) {
                     return next(err);
                 }
-                auth.encryptSession(user, res);
-                return res.redirect('/');
+                d.resolve(user);
+            });
+        } else {
+            userDao.save(profile, function (err) {
+                if (err) {
+                    return next(err);
+                }
+                d.resolve(profile);
             });
         }
+    }).then(function (d, user) {
+        auth.encryptSession(user, res);
+        res.redirect('/');
     });
-    //console.log(req.session.user);
-    res.redirect('/');
 }
 
 module.exports = {

@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
-    id: {type: String},
+    githubid: {type: String},
     username: {type: String},
     email: {type: String},
     avatar: {type: String},
