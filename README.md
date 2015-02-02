@@ -26,9 +26,9 @@ Currently only test in Chrome, require angularjs
 ## Installation & usage
 
 ```
-
-1.安装依赖：npm install
-2.跑程序：node app.js
+1.安装mongodb并运行：mongod --dbpath .\data\db(目录)
+2.下载程序并安装依赖：npm install
+3.跑程序：node app.js
 
 ```
 

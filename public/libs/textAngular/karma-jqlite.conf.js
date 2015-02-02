@@ -19,6 +19,7 @@ module.exports = function (config) {
 			'src/textAngular-sanitize.js',
 			'src/textAngularSetup.js',
 			'src/textAngular.js',
+			'test/helpers.js',
 			'bower_components/jquery/jquery.min.js',
 			'test/**/*.spec.js'
 		],
@@ -38,8 +39,8 @@ module.exports = function (config) {
 		reporters: ['progress', 'coverage'],
 		coverageReporter: {
 			reporters: [
-				{type: 'json', dir: 'coverage/'},
-				{type: 'lcov', dir: 'coverage/'}
+				{type: 'json', dir: 'coverage'},
+				{type: 'lcov', dir: 'coverage'}
 			]
 		},
 

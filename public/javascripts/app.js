@@ -13,7 +13,8 @@
         'authentication',
         'ngWeb',
         'ngMessage',
-        'angular-loading-bar'
+        'angular-loading-bar',
+        'textAngular'
     ];
     //window.globePath= 'http://localhost:3000';
 

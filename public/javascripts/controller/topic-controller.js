@@ -4,6 +4,9 @@
 (function (angular) {
     'use strict';
 
+    /**
+     * index will use this controller
+     */
     angular.module('ngWeb').controller('topicController', ['$scope', '$http', 'topicItemSource',
         function ($scope, $http, topicItemSource) {
             $scope.data = topicItemSource;

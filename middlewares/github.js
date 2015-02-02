@@ -65,7 +65,7 @@ function githubCallback(req, res, next) {
         }
     }).then(function (d, user) {
         auth.encryptSession(user, res);
-        res.redirect('/');
+        res.redirect('back');
     });
 }
 

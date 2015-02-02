@@ -123,6 +123,9 @@
                 '   <a href data-ui-sref="about">' +
                 '       <span class="text">About Me</span>' +
                 '   </a>' +
+                '   <a href data-ui-sref="edit-article">' +
+                '       <span class="text">Post Article</span>' +
+                '   </a>' +
                 '</div>';
 
             $templateCache.put('layout-header.html', layoutHeaderHtml);

@@ -25,6 +25,9 @@
                 })
                 .state('category', {
                     url: '/topic/:category', templateUrl: '/templates/topic/topic-category'
+                })
+                .state('edit-article', {
+                    url: '/edit-article', templateUrl: '/templates/edit-article'
                 });
         }]);
 

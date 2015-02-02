@@ -18,6 +18,9 @@ router.get('/templates/about', render('templates/about'));
 router.get('/templates/article', render('templates/article'));
 router.get('/templates/topic', render('templates/topic'));
 router.get('/templates/topic/:category', render('templates/topic-category'));
+router.get('/templates/edit-article', render('templates/edit-article'));
+
+
 router.get('/partials/dialog-modal', render('partials/dialog-modal'));
 router.get('/partials/login', render('partials/login'));
 

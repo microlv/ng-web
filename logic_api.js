@@ -15,6 +15,7 @@ var router = express.Router();
 router.get('/topics/grouptopics', topics.groupTopics);
 router.get('/topics/:category', topics.getTopicsCategory);
 router.get('/article/:id', topics.getArticleById);
+router.post('/saveArticle', topics.saveArticle);
 
 //router.post('/auth/login', auth.login);
 //router.post('/auth/reg', auth.reg);

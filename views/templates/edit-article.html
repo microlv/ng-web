@@ -1,0 +1,9 @@
+<div data-ng-controller="editArticleController">
+    <select>
+        <option data-ng-repeat="item in category">{{item.uiSref}}</option>
+    </select>
+    <input type="text" data-ng-model="title"/>
+    <text-angular data-ng-model="content"></text-angular>
+
+    <input type="button" data-ng-click="submit()" value="submit"/>
+</div>
