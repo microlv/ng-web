@@ -13,7 +13,7 @@
 
             $scope.submit = function () {
                 $http({
-                    type: 'post',
+                    method: 'post',
                     url: '/api/saveArticle',
                     data: {
                         category: 'javascript',

@@ -5,7 +5,7 @@
 'use strict';
 
 var Topics = require('../models').Topics;
-var $l = require('livejs');
+var _ = require('lodash');
 
 module.exports = {
     groupTopics: function (callback) {
@@ -28,10 +28,7 @@ module.exports = {
     },
     save: function (entity) {
         var topic = new Topics();
-        $l.extend(topic, entity);
-
-        console.log(topic);
-
-        //topic.save();
+        _.extend(topic, entity);
+        topic.save();
     }
 };
