@@ -7,28 +7,36 @@
 var Topics = require('../models').Topics;
 var _ = require('lodash');
 
+function groupTopics(callback) {
+    var data = Topics.aggregate([
+        {
+            $project: {category: 1}
+        },
+        {
+            $group: {
+                _id: '$category',
+                count: {$sum: 1}
+            }
+        }], callback);
+}
+
+function getTopicsCategory(category, callback) {
+    Topics.find(category, '_id category title visitCount updateAt', callback);
+}
+
+function getArticleById(obj, callback) {
+    Topics.find(obj, callback);
+}
+
+function save(entity) {
+    var topic = new Topics();
+    _.extend(topic, entity);
+    topic.save();
+}
+
 module.exports = {
-    groupTopics: function (callback) {
-        var data = Topics.aggregate([
-            {
-                $project: {category: 1}
-            },
-            {
-                $group: {
-                    _id: '$category',
-                    count: {$sum: 1}
-                }
-            }], callback);
-    },
-    getTopicsCategory: function (category, callback) {
-        Topics.find(category, '_id category title visitCount updateAt', callback);
-    },
-    getArticleById: function (id, callback) {
-        Topics.find({_id: id}, callback);
-    },
-    save: function (entity) {
-        var topic = new Topics();
-        _.extend(topic, entity);
-        topic.save();
-    }
+    groupTopics: groupTopics,
+    getTopicsCategory: getTopicsCategory,
+    getArticleById: getArticleById,
+    save: save
 };

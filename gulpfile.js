@@ -22,7 +22,9 @@ var paths = {
         //'public/ui-bootstrap-tpls.js',
         //'public/ng-message/ngMessage.js',
         'public/javascripts/app.js',
-        'public/javascripts/platform/*.js',
+        'public/javascripts/platform/ng-web.js',
+        'public/javascripts/platform/platform.js',
+        'public/javascripts/platform/authentication.js',
         'public/javascripts/services/*.js',
         'public/javascripts/directive/*.js',
         'public/javascripts/controller/*.js'
@@ -45,7 +47,7 @@ gulp.task('scripts', ['clean'], function () {
         .pipe(uglify())
         .pipe(concat('ng-web.min.js'))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('build/js'));
+        .pipe(gulp.dest('public/build/js'));
 });
 
 // Copy all static images
@@ -53,7 +55,7 @@ gulp.task('images', ['clean'], function () {
     return gulp.src(paths.images)
         // Pass in options to the task
         .pipe(imagemin({optimizationLevel: 5}))
-        .pipe(gulp.dest('build/img'));
+        .pipe(gulp.dest('public/build/img'));
 });
 
 // Rerun the task when a file changes

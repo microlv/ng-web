@@ -16,6 +16,7 @@ function render(html) {
 router.get('/', render('index'));
 router.get('/templates/about', render('templates/about'));
 router.get('/templates/article', render('templates/article'));
+//router.get('/templates/article/:id', render('templates/article'));
 router.get('/templates/topic', render('templates/topic'));
 router.get('/templates/topic/:category', render('templates/topic-category'));
 router.get('/templates/edit-article', render('templates/edit-article'));
