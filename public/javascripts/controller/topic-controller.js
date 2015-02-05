@@ -16,9 +16,11 @@
 
                     _.forEach(response.data, function (k) {
                         var updateItem = _.find($scope.data, function (i) {
-                            return k.topic === i._id;
+                            return k._id.toLowerCase() === i.topic.toLowerCase();
                         });
-                        updateItem.number = k.count;
+                        if (updateItem) {
+                            updateItem.number = k.count;
+                        }
                     });
                 }
             });

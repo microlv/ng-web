@@ -44,10 +44,16 @@ function saveArticle(req, res, next) {
         return;
     }
 
+
+    function safePost(str) {
+        //return validator.escape(validator.trim(str));
+        return validator.trim(str);
+    }
+
     var entity = {
-        category: validator.trim(req.body.category),
-        title: validator.trim(req.body.title),
-        content: validator.trim(req.body.content)
+        category: safePost(req.body.category),
+        title: safePost(req.body.title),
+        content: safePost(req.body.content)
     };
 
     topicDao.save(entity, function (err, docs) {

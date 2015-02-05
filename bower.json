@@ -38,6 +38,7 @@
     "angular-loading-bar": "~0.6.0",
     "lodash": "~2.4.1",
     "ng-message": "*",
-    "textAngular": "~1.2.2"
+    "textAngular": "~1.3.5",
+    "validator-js": "~3.28.0"
   }
 }

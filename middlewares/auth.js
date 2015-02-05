@@ -22,6 +22,22 @@ function encryptSession(user, res) {
     res.cookie(config.auth_cookie_name, auth_token, {path: '/', maxAge: 1000 * 60 * 60 * 24 * 30}); //cookie 有效期30天
 }
 
+function authLogon(req, res, next) {
+    if (req.sessionID) {
+
+        //sessions.findOne({_id: req.sessionID}, function (err, user) {
+        //    if (err) {
+        //        next();
+        //    }
+        //    if (user) {
+        //        res.send(true);
+        //    }
+        //    res.send(false);
+        //});
+    }
+}
+
 module.exports = {
-    encryptSession: encryptSession
+    encryptSession: encryptSession,
+    authLogon: authLogon
 };

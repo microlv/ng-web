@@ -10,7 +10,7 @@
 
             $http.get('/api/article/' + $state.params.id).then(function (res) {
                 if (res.status === 200) {
-                    $scope.content = res.data[0].content;
+                    $('#articleContent').append(res.data[0].content);
                 }
             });
         }]);

@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var compression = require('compression');
 
 var passport = require('passport');
-var github = require('./middlewares/github');
+var github = require('./middlewares').github;
 var session = require('express-session');
 var connectMongo = require('connect-mongo')(session);
 

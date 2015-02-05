@@ -62,7 +62,7 @@
                 '           </li>' +
                 '           <li>' +
                 '               <a href ng-click="login()">' +
-                '                   <i class="icon icon-key"></i>' +
+                '                   <i class="icon-github"></i>' +
                 '                   <span class="text">Login</span>' +
                 '               </a>' +
                 '           </li>' +

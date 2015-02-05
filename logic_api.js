@@ -6,8 +6,8 @@
 
 var topics = require('./controller/topics');
 var passport = require('passport');
-var github = require('./middlewares/github');
-
+var github = require('./middlewares').github;
+var auth = require('./middlewares').auth;
 
 var express = require('express');
 var router = express.Router();
@@ -18,7 +18,7 @@ router.get('/article/:id', topics.getArticleById);
 router.post('/saveArticle', topics.saveArticle);
 
 //router.post('/auth/login', auth.login);
-//router.post('/auth/reg', auth.reg);
+router.get('/auth/authLogon', auth.authLogon);
 router.get('/auth/github', github.githubAuth());
 router.get('/auth/github/callback', github.githubAuth({failureRedirect: '/'}), github.githubCallback);
 
