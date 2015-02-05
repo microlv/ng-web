@@ -1,12 +1,10 @@
 ng-web
 ======
+[![Build Status](https://travis-ci.org/microlv/ng-web.svg?branch=master)](https://travis-ci.org/microlv/ng-web)
 
-use angularjs,nodejs,mongodb,build for single page application web blog.
-
-本站的主要目的是使用时下流行的js技术进建立一个人网站，使用的技术主要为angularjs,nodejs,mongodb
-网站建成后，本人将尽我所能地去分享我的技术。
-
-
+1. use angularjs,nodejs,mongodb,build for single page application web blog.
+2. 本站的主要目的是使用时下流行的js技术进建立一个人网站，使用的技术主要为angularjs,nodejs,mongodb
+3. Demo: http://microlv.heroku.com
 
 ## Download
 ```
