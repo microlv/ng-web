@@ -15,6 +15,7 @@ var connectMongo = require('connect-mongo')(session);
 
 var web_api = require('./web_api');
 var logic_api = require('./logic_api');
+var responseTime = require('response-time');
 
 var app = express();
 
@@ -34,6 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(compression({
     threshold: 512
 }));
+
+app.use(responseTime());
 
 app.use(session({
     secret: config.session_secret,

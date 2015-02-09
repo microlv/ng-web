@@ -5,11 +5,14 @@
 (function (angular, validator) {
     'use strict';
 
-    angular.module('ngWeb').controller('editArticleController', ['$scope', '$http', 'topicItemSource',
-        function ($scope, $http, topicItemSource) {
+    angular.module('ngWeb').controller('editArticleController', ['$scope', '$http', 'topicItemSource', 'dialogService',
+        function ($scope, $http, topicItemSource, dialogService) {
             $scope.category = topicItemSource;
-            $scope.content = '';
-            $scope.title = '';
+            function init() {
+                $scope.content = '';
+                $scope.title = '';
+                $scope.selectCategory = topicItemSource[0];
+            }
 
             function safePost(str) {
                 //return validator.escape(validator.trim(str));
@@ -34,9 +37,16 @@
                         content: content
                     }
                 }).then(function (res) {
-                    console.log('save finish');
+                    if (res.status === 200 && res.data) {
+                        init();
+                        dialogService.show({
+                            template: 'save-ok.html'
+                        });
+                    }
                 });
             };
+
+            init();
         }]);
 
 })(angular, validator);

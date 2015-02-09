@@ -14,7 +14,7 @@
                 controller: function ($scope) {
                     $scope.login = function () {
                         dialogService.show({
-                            template: $templateCache.get('login-template.html')
+                            template: 'login-template.html'
                         });
                     };
                 }

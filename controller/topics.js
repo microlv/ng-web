@@ -59,7 +59,7 @@ function saveArticle(req, res, next) {
         if (err) {
             next(err);
         }
-        res.send(docs);
+        res.send({result: "OK"});
     });
 }
 

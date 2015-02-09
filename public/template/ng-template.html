@@ -23,10 +23,21 @@
                 <img src="/images/github.jpg"/>
                 <span>使用GitHub</span>
             </a>
-            <!--<a href>-->
-                <!--<div><img src="/images/no.jpg"/></div>-->
-                <!--<div><span>不要点我</span></div>-->
-            <!--</a>-->
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-ng-click="ok()">OK</button>
+            <button class="btn btn-warning" data-ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="save-ok.html">
+    <div>
+        <div class="modal-header">
+            <h3 class="modal-title">{{title}}</h3>
+        </div>
+        <div class="modal-body">
+            <div>Save is OK</div>
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" data-ng-click="ok()">OK</button>
@@ -52,6 +63,7 @@
         </div>
         <div class="article-post">
             <span class="user-info"> By: microlv / {{item.updateAt}} </span>
+
             <p>
                 <a data-ng-href="{{item.href}}">{{item.title}}</a>
             </p>
