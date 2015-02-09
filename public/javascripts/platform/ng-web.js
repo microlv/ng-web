@@ -57,7 +57,7 @@
                 '           <li>' +
                 '               <a href>' +
                 '                   <i class="icon icon-user"></i>' +
-                '                   <span class="text">welcome</span>' +
+                '                   <span class="text" data-ng-model="username"></span>' +
                 '               </a>' +
                 '           </li>' +
                 '           <li>' +
