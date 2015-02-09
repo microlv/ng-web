@@ -8,6 +8,7 @@ var validator = require('validator');
 var auth = require('../middlewares').auth;
 var topicDao = require('../dao').topics;
 var router = express.Router();
+var config = require('../config');
 
 function groupTopics(req, res, next) {
     topicDao.groupTopics(function (err, docs) {
@@ -39,7 +40,7 @@ function getArticleById(req, res, next) {
 
 function saveArticle(req, res, next) {
     //before save, need validation
-    if (auth.authUser(req, res)) {
+    if (!auth.authUser(req, res)) {
         res.send({err: 'you have no right to post a article!'});
     }
 

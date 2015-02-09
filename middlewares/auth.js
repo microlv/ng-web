@@ -22,13 +22,40 @@ function encryptSession(user, res) {
     res.cookie(config.auth_cookie_name, auth_token, {path: '/', maxAge: 1000 * 60 * 60 * 24 * 30}); //cookie 有效期30天
 }
 
+
+function setTokenForTest(req, res) {
+    if (config.debug) {
+        req.session.user = {
+            "_id": "54cdf3f06014f5580bc34441",
+            "provider": "github",
+            "profileUrl": "https://github.com/microlv",
+            "avatar": "https://avatars.githubusercontent.com/u/5182589?v=3",
+            "username": "microlv",
+            "githubid": "5182589",
+            "__v": 0,
+            "token": "3ATVQp3sBUYe5khBZIZkx7Zo8LOjJx",
+            "isAdmin": true
+        };
+    }
+}
+
 function authUser(req, res) {
+    setTokenForTest(req, res);
     if (req.session && req.session.user) {
         return req.session.user.isAdmin;
     }
 }
 
+function authUserApi(req, res, next) {
+    if (!authUser(req, res)) {
+        res.send({err: 'you have no right to post a article!'});
+    } else {
+        next();
+    }
+}
+
 module.exports = {
     encryptSession: encryptSession,
-    authUser: authUser
+    authUser: authUser,
+    authUserApi: authUserApi
 };
