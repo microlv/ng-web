@@ -9,8 +9,7 @@
         function ($scope, $http) {
             $http.get('/api/auth/authUser').then(function (res) {
                 if (res.status === 200) {
-                    $scope.isLogon = true;
-                    //res.data;
+                    $scope.isAdmin = res.data[0].isAdmin;
                 }
             });
         }]);

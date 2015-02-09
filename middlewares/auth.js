@@ -40,7 +40,7 @@ function setTokenForTest(req, res) {
 }
 
 function authUser(req, res) {
-    setTokenForTest(req, res);
+    //setTokenForTest(req, res);
     if (req.session && req.session.user) {
         return req.session.user.isAdmin;
     }
@@ -50,7 +50,7 @@ function authUserApi(req, res, next) {
     if (!authUser(req, res)) {
         res.send({err: 'you have no right to post a article!'});
     } else {
-        next();
+        res.send({result: "OK", isAdmin: true});
     }
 }
 
