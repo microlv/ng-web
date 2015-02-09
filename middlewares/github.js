@@ -19,7 +19,7 @@ function githubStrategy() {
             callbackURL: process.env.GITHUB_CALLBACK || config.GITHUB_CALLBACK
         },
         function (accessToken, refreshToken, profile, done) {
-            profile.accessToken = accessToken;
+            profile.token = accessToken;
             done(null, profile);
         }
     );
@@ -35,6 +35,7 @@ function githubCallback(req, res, next) {
     // Successful authentication, redirect home.
     var profile = req.user;
 
+    //currently only one admin user, and need set admin by use db tool.
     $l(function (d) {
         userDao.findOne({githubid: profile.id}, function (err, user) {
             if (err) {
@@ -49,6 +50,8 @@ function githubCallback(req, res, next) {
             user.email = profile.email;
             user.profileUrl = profile.profileUrl;
             user.provider = profile.provider;
+            user.token = profile.token;
+            //set user as default not admin
             user.save(function (err) {
                 if (err) {
                     return next(err);
@@ -64,6 +67,9 @@ function githubCallback(req, res, next) {
             });
         }
     }).then(function (d, user) {
+        if (req.session) {
+            req.session.user = user;
+        }
         auth.encryptSession(user, res);
         res.redirect('back');
     });

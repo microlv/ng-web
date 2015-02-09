@@ -18,7 +18,7 @@
     "ejs": "~0.8.5",
     "express": "~4.9.0",
     "express-session": "^1.10.1",
-    "livejs": "0.0.1",
+    "livejs": "0.1.10",
     "lodash": "^2.4.1",
     "mongoose": "^3.8.22",
     "morgan": "~1.3.0",

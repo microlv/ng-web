@@ -28,10 +28,10 @@ function getArticleById(obj, callback) {
     Topics.find(obj, callback);
 }
 
-function save(entity) {
+function save(entity, callback) {
     var topic = new Topics();
     _.extend(topic, entity);
-    topic.save();
+    topic.save(callback);
 }
 
 module.exports = {

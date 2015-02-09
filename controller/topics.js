@@ -5,6 +5,7 @@
 'use strict';
 var express = require('express');
 var validator = require('validator');
+var auth = require('../middlewares').auth;
 var topicDao = require('../dao').topics;
 var router = express.Router();
 
@@ -38,12 +39,9 @@ function getArticleById(req, res, next) {
 
 function saveArticle(req, res, next) {
     //before save, need validation
-
-    if (req.session.user) {
+    if (auth.authUser(req, res)) {
         res.send({err: 'you have no right to post a article!'});
-        return;
     }
-
 
     function safePost(str) {
         //return validator.escape(validator.trim(str));

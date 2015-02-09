@@ -29,7 +29,7 @@ app.use(favicon(__dirname + '/public/images/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser());
+app.use(cookieParser(config.session_secret));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(compression({
     threshold: 512
@@ -40,6 +40,7 @@ app.use(session({
     store: new connectMongo({
         url: process.env.MONGOLAB_URI || config.dbconnect
     }),
+    cookie: {secure: true},
     resave: true,
     saveUninitialized: true
 }));

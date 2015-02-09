@@ -12,8 +12,10 @@ var userSchema = new Schema({
     username: {type: String},
     email: {type: String},
     avatar: {type: String},
-    profileUrl:{type: String},
-    provider: {type: String}
+    profileUrl: {type: String},
+    provider: {type: String},
+    token: {type: String},
+    isAdmin: {type: Boolean}
 });
 
 mongoose.model('User', userSchema);

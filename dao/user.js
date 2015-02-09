@@ -8,8 +8,8 @@ var crypto = require('crypto');
 var _ = require('lodash');
 
 
-function findOne(obj, cb) {
-    User.findOne(obj, cb);
+function findOne(obj, callback) {
+    User.findOne(obj, callback);
 }
 
 function ext(target, source) {
@@ -21,22 +21,22 @@ function ext(target, source) {
     target.provider = source.provider;
 }
 
-function save(obj, cb) {
+function save(obj, callback) {
     var user = new User();
     ext(user, obj);
-    user.save(cb);
+    user.save(callback);
 }
 
-function findOrCreate(profile, cb) {
+function findOrCreate(profile, callback) {
     User.findOne({githubid: profile.id}, function (err, user) {
         if (err) {
             return err;
         }
         if (user) {
             ext(user, profile);
-            user.save(cb);
+            user.save(callback);
         } else {
-            save(profile, cb);
+            save(profile, callback);
         }
     });
 }

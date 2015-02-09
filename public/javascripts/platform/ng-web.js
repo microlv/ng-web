@@ -10,42 +10,42 @@
                 topic: 'Javascript',
                 liStyle: 'bg_lg span3',
                 uiSref: 'javascript',
-                iStyle: 'icon-signal',
+                iStyle: 'icon-leaf',
                 spanStyle: 'label label-success'
             },
             {
                 topic: 'Angularjs',
-                liStyle: 'bg_lb',
+                liStyle: 'bg_lb span2',
                 uiSref: 'angularjs',
-                iStyle: 'icon-dashboard',
+                iStyle: 'icon-twitter',
                 spanStyle: 'label label-success'
             },
             {
                 topic: 'NodeJS',
                 liStyle: 'bg_ly span2',
                 uiSref: 'nodejs',
-                iStyle: 'icon-inbox',
+                iStyle: 'icon-beaker',
                 spanStyle: 'label label-success'
             },
             {
                 topic: 'C#',
                 liStyle: 'bg_lo span3',
                 uiSref: 'csharp',
-                iStyle: 'icon-th',
+                iStyle: 'icon-lemon',
                 spanStyle: 'label label-success'
             },
             {
                 topic: 'MongoDB',
                 liStyle: 'bg_ls',
                 uiSref: 'mongodb',
-                iStyle: 'icon-fullscreen',
+                iStyle: 'icon-cloud',
                 spanStyle: 'label label-success'
             },
             {
                 topic: 'SQL',
                 liStyle: 'bg_lo',
                 uiSref: 'sql',
-                iStyle: 'icon-th-list',
+                iStyle: 'icon-th-large',
                 spanStyle: 'label label-success'
             }])
         .run(['$templateCache', function ($templateCache) {
