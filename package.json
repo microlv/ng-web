@@ -1,8 +1,8 @@
 {
   "name": "ng-web",
-  "version": "1.0.1",
+  "version": "1.0.10",
   "engines": {
-    "node": "0.10.28"
+    "iojs": "1.1.0"
   },
   "private": true,
   "scripts": {
