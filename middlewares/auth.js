@@ -6,8 +6,9 @@
 
 var crypto = require('crypto');
 
-var user = require('../dao').user;
+var userDao = require('../dao').user;
 var config = require('../config');
+var $l = require('livejs');
 
 //blow code copy from cnode
 function encrypt(str, secret) {
@@ -33,7 +34,7 @@ function setTokenForTest(req, res) {
             "username": "microlv",
             "githubid": "5182589",
             "__v": 0,
-            "token": "3ATVQp3sBUYe5khBZIZkx7Zo8LOjJx",
+            "token": "a86ad7150367397ecf66ade2858ef798257aeb3a",
             "isAdmin": true
         };
     }
@@ -41,23 +42,31 @@ function setTokenForTest(req, res) {
 
 function authUser(req, res) {
     setTokenForTest(req, res);
-    if (req.session && req.session.user) {
-        return req.session.user.isAdmin;
-    }
+    return $l(function (d) {
+        if (req.session && req.session.user) {
+            var sessionUser = req.session.user;
+            userDao.findOne({token: sessionUser.token}, function (err, user) {
+                if (err) {
+                    res.send({err: 'you have no right to post a article!'});
+                }
+                d.resolve(user && user.isAdmin);
+            });
+        }
+    });
 }
 
 function authUserApi(req, res, next) {
-    if (!authUser(req, res)) {
-        res.send({err: 'you have no right to post a article!'});
-    }
-
-    if (req.session && req.session.user) {
-        res.send({
-            result: "OK",
-            username: req.session.user.username,
-            isAdmin: true
-        });
-    }
+    authUser(req, res).then(function (d, r) {
+        if (r) {
+            res.send({
+                result: "OK",
+                username: req.session.user.username,
+                isAdmin: true
+            });
+        } else {
+            res.send({err: 'you have no right to post a article!'});
+        }
+    });
 }
 
 module.exports = {

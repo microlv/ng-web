@@ -31,6 +31,17 @@ function githubAuth(config) {
     return passport.authenticate('github');
 }
 
+function createUser(profile) {
+    var user = {};
+    user.username = profile.username;
+    user.avatar = profile._json.avatar_url;
+    user.email = profile.email;
+    user.profileUrl = profile.profileUrl;
+    user.provider = profile.provider;
+    user.token = profile.token;
+    return user;
+}
+
 function githubCallback(req, res, next) {
     // Successful authentication, redirect home.
     var profile = req.user;
@@ -45,25 +56,20 @@ function githubCallback(req, res, next) {
         });
     }).then(function (d, user) {
         if (user) {
-            user.username = profile.username;
-            user.avatar = profile._json.avatar_url;
-            user.email = profile.email;
-            user.profileUrl = profile.profileUrl;
-            user.provider = profile.provider;
-            user.token = profile.token;
+            var updateUser = createUser(profile);
             //set user as default not admin
             user.save(function (err) {
                 if (err) {
                     return next(err);
                 }
-                d.resolve(user);
+                d.resolve(updateUser);
             });
         } else {
             userDao.save(profile, function (err) {
                 if (err) {
                     return next(err);
                 }
-                d.resolve(profile);
+                d.resolve(createUser(profile));
             });
         }
     }).then(function (d, user) {
