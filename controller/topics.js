@@ -40,26 +40,31 @@ function getArticleById(req, res, next) {
 
 function saveArticle(req, res, next) {
     //before save, need validation
-    if (!auth.authUser(req, res)) {
-        res.send({err: 'you have no right to post a article!'});
-    }
-
+    //if (!auth.authUser(req, res)) {
+    //    res.send({err: 'you have no right to post a article!'});
+    //}
     function safePost(str) {
         //return validator.escape(validator.trim(str));
         return validator.trim(str);
     }
 
-    var entity = {
-        category: safePost(req.body.category),
-        title: safePost(req.body.title),
-        content: safePost(req.body.content)
-    };
+    auth.authUser(req, res).then(function (d, r) {
+        if (r) {
+            var entity = {
+                category: safePost(req.body.category),
+                title: safePost(req.body.title),
+                content: safePost(req.body.content)
+            };
 
-    topicDao.save(entity, function (err, docs) {
-        if (err) {
-            next(err);
+            topicDao.save(entity, function (err, docs) {
+                if (err) {
+                    next(err);
+                }
+                res.send({result: "OK"});
+            });
+        } else {
+            res.send({err: 'you have no right to post a article!'});
         }
-        res.send({result: "OK"});
     });
 }
 
