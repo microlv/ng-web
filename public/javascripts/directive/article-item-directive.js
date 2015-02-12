@@ -17,7 +17,7 @@
             },
             controller: ['$scope', function ($scope) {
                 $scope.articleEdit = function (item) {
-                    $state.go('edit-article', {id: item._id});
+                    $state.go('update-article', {id: item._id});
                 };
             }]
         };
