@@ -48,24 +48,41 @@ function saveArticle(req, res, next) {
         return validator.trim(str);
     }
 
-    auth.authUser(req, res).then(function (d, r) {
-        if (r) {
-            var entity = {
-                category: safePost(req.body.category),
-                title: safePost(req.body.title),
-                content: safePost(req.body.content)
-            };
+    var entity = {
+        category: safePost(req.body.category),
+        title: safePost(req.body.title),
+        content: safePost(req.body.content)
+    };
 
-            topicDao.save(entity, function (err, docs) {
-                if (err) {
-                    next(err);
-                }
-                res.send({result: "OK"});
-            });
-        } else {
-            res.send({err: 'you have no right to post a article!'});
+    if (!entity.category || !entity.title || !entity.content) {
+        res.send({err: 'you post a err article!'});
+    }
+
+    topicDao.save(entity, function (err, docs) {
+        if (err) {
+            next(err);
         }
+        res.send({result: "OK"});
     });
+
+    //auth.authUser(req, res, next).then(function (d, r) {
+    //    if (r) {
+    //        var entity = {
+    //            category: safePost(req.body.category),
+    //            title: safePost(req.body.title),
+    //            content: safePost(req.body.content)
+    //        };
+    //
+    //        topicDao.save(entity, function (err, docs) {
+    //            if (err) {
+    //                next(err);
+    //            }
+    //            res.send({result: "OK"});
+    //        });
+    //    } else {
+    //        res.send({err: 'you have no right to post a article!'});
+    //    }
+    //});
 }
 
 module.exports = {

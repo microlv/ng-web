@@ -35,7 +35,9 @@ function createUser(profile) {
     var user = {};
     user.username = profile.username;
     user.avatar = profile._json.avatar_url;
-    user.email = profile.email;
+    if (profile.emails[0].value) {
+        user.email = profile.emails[0].value;
+    }
     user.profileUrl = profile.profileUrl;
     user.provider = profile.provider;
     user.token = profile.token;
@@ -77,7 +79,7 @@ function githubCallback(req, res, next) {
             req.session.user = user;
         }
         auth.encryptSession(user, res);
-        res.redirect('back');
+        res.redirect('/');
     });
 }
 

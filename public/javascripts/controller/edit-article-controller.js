@@ -20,7 +20,7 @@
             }
 
             $scope.submit = function () {
-                var category = safePost($scope.selectCategory);
+                var category = safePost($scope.selectCategory.uiSref);
                 var title = safePost($scope.title);
                 var content = safePost($scope.content);
 

@@ -23,9 +23,8 @@ function encryptSession(user, res) {
     res.cookie(config.auth_cookie_name, auth_token, {path: '/', maxAge: 1000 * 60 * 60 * 24 * 30}); //cookie 有效期30天
 }
 
-
 function setTokenForTest(req, res) {
-    if (config.debug) {
+    if (true) {
         req.session.user = {
             "_id": "54cdf3f06014f5580bc34441",
             "provider": "github",
@@ -40,23 +39,22 @@ function setTokenForTest(req, res) {
     }
 }
 
-function authUser(req, res) {
+function authUser(req, res, next) {
     setTokenForTest(req, res);
     return $l(function (d) {
         if (req.session && req.session.user) {
             var sessionUser = req.session.user;
             userDao.findOne({token: sessionUser.token}, function (err, user) {
-                if (err) {
-                    res.send({err: 'you have no right to post a article!'});
-                }
-                d.resolve(user && user.isAdmin);
+                d.resolve(err || (user && user.isAdmin));
             });
+        } else {
+            next();
         }
     });
 }
 
 function authUserApi(req, res, next) {
-    authUser(req, res).then(function (d, r) {
+    authUser(req, res, next).then(function (d, r) {
         if (r) {
             res.send({
                 result: "OK",

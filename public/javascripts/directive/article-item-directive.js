@@ -14,7 +14,12 @@
             template: $templateCache.get('article-item.html'),
             link: function (scope, ele, att) {
                 scope.item.href = $state.href('article', {id: scope.item._id});
-            }
+            },
+            controller: ['$scope', function ($scope) {
+                $scope.articleEdit = function (item) {
+                    $state.go('edit-article', {id: item._id});
+                };
+            }]
         };
     }]);
 

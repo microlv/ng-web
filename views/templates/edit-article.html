@@ -1,21 +1,10 @@
 <div data-ng-controller="editArticleController" style="margin: 10px">
-    <select data-ng-model="selectCategory" required>
-        <option data-ng-repeat="item in category">{{item.uiSref}}</option>
+    <select ng-model="selectCategory"
+            ng-options="item.topic for item in category"
+            ng-value="item.uiSref">
     </select>
-    <input type="text" data-ng-model="title" required/>
+    <input type="text" data-ng-model="title" required="required"/>
     <text-angular data-ng-model="content"></text-angular>
 
     <input class="btn btn-success" type="button" data-ng-click="submit()" value="submit"/>
-
-    <!--<div class="btn-group open">-->
-    <!--<a class="btn btn-primary" href="#"><i class="icon-user"></i> User</a>-->
-    <!--<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span></a>-->
-    <!--<ul class="dropdown-menu">-->
-    <!--<li><a href="#"><i class="icon-pencil"></i> Edit</a></li>-->
-    <!--<li><a href="#"><i class="icon-trash"></i> Delete</a></li>-->
-    <!--<li><a href="#"><i class="icon-ban-circle"></i> Ban</a></li>-->
-    <!--<li class="divider"></li>-->
-    <!--<li><a href="#"><i class="i"></i> Make admin</a></li>-->
-    <!--</ul>-->
-    <!--</div>-->
 </div>
