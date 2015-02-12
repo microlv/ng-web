@@ -46,10 +46,7 @@ function authUser(req, res) {
         if (req.session && req.session.user) {
             var sessionUser = req.session.user;
             userDao.findOne({token: sessionUser.token}, function (err, user) {
-                if (err) {
-                    res.send({err: 'you have no right to post a article!'});
-                }
-                d.resolve(user && user.isAdmin);
+                d.resolve(err?false:(user && user.isAdmin));
             });
         }
     });
