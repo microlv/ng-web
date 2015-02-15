@@ -19,7 +19,7 @@ var responseTime = require('response-time');
 
 var app = express();
 
-if (app.get('env') !== 'development') {
+if (!process.env.debug) {
     app.use(function(req,res,next){
         if(req.headers['x-forwarded-proto']!='https'){
             console.log('require https')
