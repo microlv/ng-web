@@ -5,7 +5,7 @@
 (function (angular) {
     'use strict';
 
-    angular.module('ngWeb').directive('articleItem', ['$templateCache', '$state', function ($templateCache, $state) {
+    angular.module('ngWeb').directive('articleItem', ['$templateCache', '$state', 'commonService', function ($templateCache, $state, commonService) {
         return {
             restrict: 'EA',
             scope: {
@@ -14,6 +14,7 @@
             template: $templateCache.get('article-item.html'),
             link: function (scope, ele, att) {
                 scope.item.href = $state.href('article', {id: scope.item._id});
+                scope.item.formatUpdateAt = commonService.YYYYMMDD(scope.item.updateAt);
             },
             controller: ['$scope', function ($scope) {
                 $scope.articleEdit = function (item) {

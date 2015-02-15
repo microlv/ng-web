@@ -14,6 +14,7 @@ var topicSchema = new Schema({
     title: {type: String},
     content: {type: String},
     visitCount: {type: Number, default: 0},
+    transfer: {type: Boolean},
     insertAt: {type: Date, default: Date.now},
     updateAt: {type: Date, default: Date.now}
 });

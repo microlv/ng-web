@@ -59,10 +59,10 @@
 <script type="text/ng-template" id="article-item.html">
     <div>
         <div class="user-thumb">
-            <span style="width:40px;height: 50px">{{item.visitCount}}</span>
+            <span style="width:40px;height: 50px">{{item.transfer}}</span>
         </div>
         <div class="article-post">
-            <span class="user-info"> By: microlv / {{item.updateAt}} </span>
+            <span class="user-info"> By: microlv / 阅读量：{{item.visitCount}} / 发布日期：{{item.formatUpdateAt}} </span>
             <i class="icon-pencil" data-ng-click="articleEdit(item)"></i>
 
             <p>

@@ -23,26 +23,10 @@ function encryptSession(user, res) {
     res.cookie(config.auth_cookie_name, auth_token, {path: '/', maxAge: 1000 * 60 * 60 * 24 * 30}); //cookie 有效期30天
 }
 
-//function setTokenForTest(req, res) {
-//    if (config.debug) {
-//        req.session.user = {
-//            "_id": "54cdf3f06014f5580bc34441",
-//            "provider": "github",
-//            "profileUrl": "https://github.com/microlv",
-//            "avatar": "https://avatars.githubusercontent.com/u/5182589?v=3",
-//            "username": "microlv",
-//            "githubid": "5182589",
-//            "__v": 0,
-//            "token": "a86ad7150367397ecf66ade2858ef798257aeb3a",
-//            "isAdmin": true
-//        };
-//    }
-//}
-
 function authUser(sessionUser) {
-     return $l(function (d) {
+    return $l(function (d) {
         if (sessionUser) {
-             userDao.findOne({token: sessionUser.token}, function (err, user) {
+            userDao.findOne({token: sessionUser.token}, function (err, user) {
                 d.resolve(err || (user && user.isAdmin));
             });
         } else {
