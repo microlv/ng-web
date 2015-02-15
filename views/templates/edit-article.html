@@ -1,10 +1,11 @@
 <div data-ng-controller="editArticleController" style="margin: 10px">
-    <select ng-model="selectCategory"
-            ng-options="item.topic for item in category"
-            ng-value="item.uiSref">
+    <select data-ng-model="selectCategory"
+            data-ng-options="item.topic for item in category"
+            data-ng-value="item.uiSref">
     </select>
-    <input type="text" data-ng-model="title" required="required"/>
+    <input style="width:400px" type="text" data-ng-model="title" required="required"/>
     <text-angular data-ng-model="content"></text-angular>
 
     <input class="btn btn-success" type="button" data-ng-click="submit()" value="submit"/>
+    <input class="btn btn-success" type="button" data-ng-click="clear()" value="clear"/>
 </div>

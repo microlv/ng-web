@@ -5,6 +5,7 @@
 (function (angular, validator) {
     'use strict';
 
+    //JSHint W117
     angular.module('ngWeb').controller('editArticleController', ['$scope', '$http', 'topicItemSource', 'dialogService', '$state',
         function ($scope, $http, topicItemSource, dialogService, $state) {
 
@@ -46,6 +47,10 @@
                         });
                     }
                 });
+            };
+
+            $scope.clear = function () {
+                init();
             };
 
             if ($state.params && $state.params.id) {

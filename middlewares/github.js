@@ -94,7 +94,7 @@ function githubCallback(req, res, next) {
         if (req.session) {
             req.session.user = user;
         }
-        auth.encryptSession(user, res);
+        //auth.encryptSession(user, res);
         res.redirect('/');
     });
 }
