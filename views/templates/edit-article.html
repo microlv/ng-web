@@ -3,6 +3,10 @@
             data-ng-options="item.topic for item in category"
             data-ng-value="item.uiSref">
     </select>
+    <select data-ng-model="selectTransfer"
+            data-ng-options="item.name for item in transfer"
+            data-ng-value="item.value">
+    </select>
     <input style="width:400px" type="text" data-ng-model="title" required="required"/>
     <text-angular data-ng-model="content"></text-angular>
 

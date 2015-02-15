@@ -10,11 +10,13 @@
         function ($scope, $http, topicItemSource, dialogService, $state) {
 
             $scope.category = topicItemSource;
+            $scope.transfer = [{name: '原创', value: false}, {name: '转载', value: true}];
 
             function init() {
                 $scope.content = '';
                 $scope.title = '';
                 $scope.selectCategory = topicItemSource[0];
+                $scope.selectTransfer = $scope.transfer[0];
             }
 
             function safePost(str) {
@@ -24,10 +26,11 @@
 
             $scope.submit = function () {
                 var category = safePost($scope.selectCategory.uiSref);
+                var transfer = safePost($scope.selectTransfer.value);
                 var title = safePost($scope.title);
                 var content = safePost($scope.content);
 
-                if (!category || !title || !content) {
+                if (!title || !content) {
                     return;
                 }
 
@@ -37,7 +40,8 @@
                     data: {
                         category: category,
                         title: title,
-                        content: content
+                        content: content,
+                        transfer: transfer
                     }
                 }).then(function (res) {
                     if (res.status === 200 && res.data) {
@@ -56,10 +60,11 @@
             if ($state.params && $state.params.id) {
                 //如果参数存在，则为update!
                 $http.get('/api/article/' + $state.params.id).then(function (res) {
-                    if (res.status === 200) {
-                        $scope.content = res.data[0].content;
-                        $scope.title = res.data[0].title;
-                        $scope.selectCategory = _.find(topicItemSource, {uiSref: res.data[0].category});
+                    if (res.status === 200 && res.data) {
+                        $scope.content = res.data.content;
+                        $scope.title = res.data.title;
+                        $scope.selectCategory = _.find(topicItemSource, {uiSref: res.data.category});
+                        $scope.selectTransfer = _.find($scope.transfer, {value: res.data.transfer});
                     }
                 });
             } else {

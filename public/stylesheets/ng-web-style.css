@@ -894,12 +894,14 @@ hr {
 }
 
 .user-thumb {
-    background: none repeat scroll 0 0 #FFFFFF;
+    /*background: none repeat scroll 0 0 #FFFFFF;*/
     float: left;
     height: 40px;
     margin-right: 10px;
     /*margin-top: 5px;*/
     /*padding: 2px;*/
+    /*font-size: 1.4em;*/
+    text-align: center;
     width: 40px;
 }
 

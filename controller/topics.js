@@ -63,6 +63,7 @@ function saveArticle(req, res, next) {
         },
         entity = {
             category: safePost(req.body.category),
+            transfer: safePost(req.body.transfer),
             title: safePost(req.body.title),
             content: safePost(req.body.content)
         };
@@ -76,7 +77,7 @@ function saveArticle(req, res, next) {
         res.send({err: message.noRight});
     }
 
-    if (!entity.category || !entity.title || !entity.content) {
+    if (!entity.category || !entity.transfer || !entity.title || !entity.content) {
         res.send({err: message.errArticle});
     }
 
