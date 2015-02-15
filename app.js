@@ -20,14 +20,14 @@ var responseTime = require('response-time');
 var app = express();
 
 if (app.get('env') !== 'development') {
-    app.use(function(req,res,next)){
+    app.use(function(req,res,next){
         if(req.headers['x-forwarded-proto']!='https'){
             console.log('require https')
             res.redirect('https://'+req.headers.host+req.path);
         }else{
             next();
         }
-    }
+    });
 }
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
