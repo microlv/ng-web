@@ -25,6 +25,22 @@ function githubStrategy() {
     );
 }
 function githubAuth(config) {
+    //if (config.debug) {
+    //    req.session.user = {
+    //        "_id": "54cdf3f06014f5580bc34441",
+    //        "provider": "github",
+    //        "profileUrl": "https://github.com/microlv",
+    //        "avatar": "https://avatars.githubusercontent.com/u/5182589?v=3",
+    //        "username": "microlv",
+    //        "githubid": "5182589",
+    //        "__v": 0,
+    //        "token": "a86ad7150367397ecf66ade2858ef798257aeb3a",
+    //        "isAdmin": true
+    //    };
+    //    auth.encryptSession(req.session.user , res);
+    //    res.redirect('/');
+    //}
+
     if (config) {
         return passport.authenticate('github', config);
     }

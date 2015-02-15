@@ -23,38 +23,37 @@ function encryptSession(user, res) {
     res.cookie(config.auth_cookie_name, auth_token, {path: '/', maxAge: 1000 * 60 * 60 * 24 * 30}); //cookie 有效期30天
 }
 
-function setTokenForTest(req, res) {
-    if (true) {
-        req.session.user = {
-            "_id": "54cdf3f06014f5580bc34441",
-            "provider": "github",
-            "profileUrl": "https://github.com/microlv",
-            "avatar": "https://avatars.githubusercontent.com/u/5182589?v=3",
-            "username": "microlv",
-            "githubid": "5182589",
-            "__v": 0,
-            "token": "a86ad7150367397ecf66ade2858ef798257aeb3a",
-            "isAdmin": true
-        };
-    }
-}
+//function setTokenForTest(req, res) {
+//    if (config.debug) {
+//        req.session.user = {
+//            "_id": "54cdf3f06014f5580bc34441",
+//            "provider": "github",
+//            "profileUrl": "https://github.com/microlv",
+//            "avatar": "https://avatars.githubusercontent.com/u/5182589?v=3",
+//            "username": "microlv",
+//            "githubid": "5182589",
+//            "__v": 0,
+//            "token": "a86ad7150367397ecf66ade2858ef798257aeb3a",
+//            "isAdmin": true
+//        };
+//    }
+//}
 
-function authUser(req, res, next) {
-    setTokenForTest(req, res);
-    return $l(function (d) {
-        if (req.session && req.session.user) {
-            var sessionUser = req.session.user;
-            userDao.findOne({token: sessionUser.token}, function (err, user) {
+function authUser(sessionUser) {
+     return $l(function (d) {
+        if (sessionUser) {
+             userDao.findOne({token: sessionUser.token}, function (err, user) {
                 d.resolve(err || (user && user.isAdmin));
             });
         } else {
-            next();
+            d.resolve(false);
         }
     });
 }
 
-function authUserApi(req, res, next) {
-    authUser(req, res, next).then(function (d, r) {
+function authUserApi(req, res) {
+    var sessionUser = req.session.user;
+    authUser(sessionUser).then(function (d, r) {
         if (r) {
             res.send({
                 result: "OK",
