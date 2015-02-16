@@ -2,16 +2,16 @@ ng-web
 ======
 [![Build Status](https://travis-ci.org/microlv/ng-web.svg?branch=master)](https://travis-ci.org/microlv/ng-web)
 
-1. use angularjs,nodejs,mongodb,build for single page application web blog.
-2. 本站的主要目的是使用时下流行的js技术进建立一个人网站，使用的技术主要为angularjs,nodejs(iojs),mongodb
-3. Demo: http://microlv.heroku.com & http://ng-web.heroku.com
+use angularjs+nodejs+mongodb+express+mongoose,build for single page application web blog.
+
+1. 本站的主要目的是使用时下流行的js技术进建立一个人网站，使用的技术主要为angularjs,nodejs(iojs),mongodb
+2. Demo: https://microlv.heroku.com & https://ng-web.heroku.com
 
 ## Download
-```
-Check out [https://github.com/microlv/ng-web.git]
-for details over the differences between builds.
-Wiki: http://microlv.github.io/ng-web   (not finished)
-```
+
+1. Check out [https://github.com/microlv/ng-web.git]
+2. Wiki: http://microlv.github.io/ng-web   (not finished)
+
 ## Features
 
 使用时下流行的angularjs打造, 数据库使用mongodb, 服务器使用nodejs.
@@ -33,7 +33,7 @@ Currently only test in Chrome(lastest version), require angularjs/nodejs(iojs)/m
 
 ## Author
 
-Andy.lv@live.com;
-Any problem contact with me.
+ Andy.lv@live.com;
+ Any problem contact with me.
 
 ## Contributors
