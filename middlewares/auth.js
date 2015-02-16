@@ -27,7 +27,7 @@ function authUser(sessionUser) {
     return $l(function (d) {
         if (sessionUser) {
             userDao.findOne({token: sessionUser.token}, function (err, user) {
-                d.resolve(err || (user && user.isAdmin));
+                d.resolve(user && user.isAdmin);
             });
         } else {
             d.resolve(false);
@@ -38,15 +38,11 @@ function authUser(sessionUser) {
 function authUserApi(req, res) {
     var sessionUser = req.session.user;
     authUser(sessionUser).then(function (d, r) {
-        if (r) {
-            res.send({
-                result: "OK",
-                username: req.session.user.username,
-                isAdmin: true
-            });
-        } else {
-            res.send({err: 'you have no right to post a article!'});
-        }
+        res.send(r ? {
+            result: "OK",
+            username: req.session.user.username,
+            isAdmin: true
+        } : {err: 'you have no right to post a article!'});
     });
 }
 

@@ -34,6 +34,10 @@ function getArticleById(obj, callback) {
     });
 }
 
+function findOne(obj, callback) {
+    Topics.findOne(obj, callback);
+}
+
 function save(entity, callback) {
     var topic = new Topics();
     _.extend(topic, entity);
@@ -44,5 +48,6 @@ module.exports = {
     groupTopics: groupTopics,
     getTopicsCategory: getTopicsCategory,
     getArticleById: getArticleById,
-    save: save
+    save: save,
+    findOne: findOne
 };
