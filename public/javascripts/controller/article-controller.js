@@ -9,8 +9,8 @@
         function ($scope, $http, $state) {
 
             $http.get('/api/article/' + $state.params.id).then(function (res) {
-                if (res.status === 200) {
-                    $('#articleContent').append(res.data[0].content);
+                if (res.status === 200 && res.data) {
+                    $('#articleContent').append(res.data.content);
                 }
             });
         }]);

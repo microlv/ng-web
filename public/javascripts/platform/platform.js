@@ -28,6 +28,9 @@
                 })
                 .state('edit-article', {
                     url: '/edit-article', templateUrl: '/templates/edit-article'
+                })
+                .state('update-article', {
+                    url: '/edit-article/:id', templateUrl: '/templates/edit-article'
                 });
         }]);
 

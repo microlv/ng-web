@@ -25,7 +25,12 @@ function getTopicsCategory(category, callback) {
 }
 
 function getArticleById(obj, callback) {
-    Topics.find(obj, callback);
+    Topics.findOne(obj, function (err, doc) {
+        doc.visitCount += 1;
+        doc.save(function () {
+        });
+        callback(err, doc);
+    });
 }
 
 function save(entity, callback) {

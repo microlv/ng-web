@@ -19,6 +19,7 @@ router.post('/saveArticle', topics.saveArticle);
 
 //router.post('/auth/login', auth.login);
 router.get('/auth/authUser', auth.authUserApi);
+//router.get('/auth/github', github.githubAuth);
 router.get('/auth/github', github.githubAuth());
 router.get('/auth/github/callback', github.githubAuth({failureRedirect: '/'}), github.githubCallback);
 

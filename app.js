@@ -49,11 +49,12 @@ app.use(compression({
 app.use(responseTime());
 
 app.use(session({
-    secret: config.session_secret,
+    //if enable secret, please make sure use https!
+    //secret: config.session_secret,
     store: new connectMongo({
         url: process.env.MONGOLAB_URI || config.dbconnect
     }),
-    cookie: {secure: true},
+    //cookie: {secure: true},
     resave: true,
     saveUninitialized: true
 }));
