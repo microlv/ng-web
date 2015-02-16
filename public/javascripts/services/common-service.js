@@ -7,7 +7,6 @@
 
     angular.module('platform').factory('commonService', [function () {
 
-        //this code come from utility, because I only need some code, so I don't inject all file.
         function YYYYMMDD(str) {
 
             var d = new Date(str),
