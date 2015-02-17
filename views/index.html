@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 <head>
-    <title>microlv's tech blog</title>
+    <title>ng-web</title>
     <meta charset="UTF-8"/>
     <meta name="fragment" content="!"/>
     <meta name="referrer" content="always">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <!--<link rel="stylesheet" href="build/css/ng-web-style.css"/>-->
+    <!--<link rel="stylesheet" href="build/css/ng-web-media.css"/>-->
+
     <link rel="stylesheet" href="build/css/ng-web.min.css?v=20150217"/>
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css"/>
+
     <link rel="stylesheet" href="libs/angular-loading-bar/build/loading-bar.min.css"/>
+    <!--<link rel='stylesheet' href='libs/textAngular/src/textAngular.css'>-->
+
 </head>
 <body data-ng-controller="mainframeController">
 
@@ -38,13 +44,38 @@
 <script src="libs/ng-message/ngMessage.js"></script>
 
 <!--user libs-->
-<script src="build/js/ng-web.min.js"></script>
+<!--platform-->
+<script src="javascripts/app.js"></script>
+<script src="javascripts/platform/ng-web.js"></script>
+<script src="javascripts/platform/platform.js"></script>
+<script src="javascripts/platform/authentication.js"></script>
 <script src="build/ng/tpl.min.js"></script>
 
+<!--services-->
+<script src="javascripts/services/dialog-service.js"></script>
+<script src="javascripts/services/common-service.js"></script>
+
+<!--controller-->
+<script src="javascripts/controller/topic-controller.js"></script>
+<script src="javascripts/controller/topic-category-controller.js"></script>
+<script src="javascripts/controller/mainframe-controller.js"></script>
+<script src="javascripts/controller/edit-article-controller.js"></script>
+<script src="javascripts/controller/article-controller.js"></script>
+
+<!--directive-->
 <script src="javascripts/directive/layout-directive.js"></script>
 <script src="javascripts/directive/topic-item-directive.js"></script>
 <script src="javascripts/directive/topic-category-directive.js"></script>
 <script src="javascripts/directive/article-item-directive.js"></script>
+
+
+<!--<script src="build/js/ng-web.min.js"></script>-->
+<!--<script src="build/ng/tpl.min.js"></script>-->
+
+<!--<script src="javascripts/directive/layout-directive.js"></script>-->
+<!--<script src="javascripts/directive/topic-item-directive.js"></script>-->
+<!--<script src="javascripts/directive/topic-category-directive.js"></script>-->
+<!--<script src="javascripts/directive/article-item-directive.js"></script>-->
 
 </body>
 </html>

@@ -42,7 +42,7 @@ function authUserApi(req, res) {
             result: "OK",
             username: req.session.user.username,
             isAdmin: true
-        } : {err: 'you have no right to post a article!'});
+        } : {err: 'you need to auth first!'});
     });
 }
 

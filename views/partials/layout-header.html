@@ -1,6 +1,6 @@
 <div style="height: 81px">
     <div id="user-nav" class="navbar navbar-inverse">
-        <ul class="nav" data-ng-show="isAdmin">
+        <ul class="nav">
             <li data-ng-show="!isAuth">
                 <a href ng-click="login()">
                     <i class="icon-github"></i>
@@ -10,7 +10,7 @@
             <li data-ng-show="isAuth">
                 <a>
                     <i class="icon icon-user"></i>
-                    <span class="text">{{::username}}</span>
+                    <span class="text">{{username}}</span>
                 </a>
             </li>
         </ul>
