@@ -38,6 +38,7 @@
                     method: 'post',
                     url: '/api/saveArticle',
                     data: {
+                        _id: $scope._id,
                         category: category,
                         title: title,
                         content: content,
@@ -61,6 +62,7 @@
                 //如果参数存在，则为update!
                 $http.get('/api/article/' + $state.params.id).then(function (res) {
                     if (res.status === 200 && res.data) {
+                        $scope._id = res.data._id;
                         $scope.content = res.data.content;
                         $scope.title = res.data.title;
                         $scope.selectCategory = _.find(topicItemSource, {uiSref: res.data.category});

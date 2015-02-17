@@ -68,6 +68,10 @@ function saveArticle(req, res, next) {
             content: safePost(req.body.content)
         };
 
+    if (req.body._id) {
+        entity._id = req.body._id;
+    }
+
     function safePost(str) {
         //return validator.escape(validator.trim(str));
         return validator.trim(str);
@@ -84,14 +88,31 @@ function saveArticle(req, res, next) {
     //before save, need validation
     auth.authUser(sessionUser).then(function (d, r) {
         if (r) {
-            topicDao.save(entity, function (err, docs) {
+            topicDao.findOne({_id: entity._id}, function (err, doc) {
                 if (err) {
-                    next(err);
+                    return next(err);
                 }
-                res.send({result: "OK"});
+                d.resolve(doc);
             });
         } else {
             res.send({err: message.noRight});
+        }
+    }).then(function (d, doc) {
+        if (doc) {
+            doc.category = entity.category;
+            doc.transfer = entity.transfer;
+            doc.title = entity.title;
+            doc.content = entity.content;
+            doc.save(function (err) {
+                res.send({result: "OK"});
+            });
+        } else {
+            topicDao.save(entity, function (err, doc) {
+                if (err) {
+                    return next(err);
+                }
+                res.send({result: "OK"});
+            });
         }
     });
 }

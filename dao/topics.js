@@ -21,7 +21,8 @@ function groupTopics(callback) {
 }
 
 function getTopicsCategory(category, callback) {
-    Topics.find(category, '_id category title visitCount updateAt', callback);
+    //point out which columns will be return
+    Topics.find(category, '_id category title visitCount updateAt transfer', callback);
 }
 
 function getArticleById(obj, callback) {
@@ -31,6 +32,10 @@ function getArticleById(obj, callback) {
         });
         callback(err, doc);
     });
+}
+
+function findOne(obj, callback) {
+    Topics.findOne(obj, callback);
 }
 
 function save(entity, callback) {
@@ -43,5 +48,6 @@ module.exports = {
     groupTopics: groupTopics,
     getTopicsCategory: getTopicsCategory,
     getArticleById: getArticleById,
-    save: save
+    save: save,
+    findOne: findOne
 };
