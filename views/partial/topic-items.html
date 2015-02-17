@@ -1,0 +1,9 @@
+<ul class="quick-actions">
+    <li data-ng-class="item.liStyle" data-ng-repeat="item in itemSource">
+        <a data-ng-href="{{item.href}}">
+            <i data-ng-class="item.iStyle"></i>
+            <span data-ng-show="item.number" class="label label-important">{{item.number}}</span>
+            {{item.topic}}
+        </a>
+    </li>
+</ul>
