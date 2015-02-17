@@ -89,10 +89,8 @@ gulp.task('ng-template', ['clean'], function () {
 gulp.task('watch', function () {
     gulp.watch(paths.scripts, ['scripts']);
     gulp.watch(paths.images, ['images']);
-    gulp.watch(paths.css, ['images']);
-    gulp.watch(paths.ngTemplate, ['images']);
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['scripts', 'minify-css', 'ng-template', 'watch']);
+gulp.task('default', ['scripts', 'minify-css', 'ng-template']);
 //gulp.task('default', ['watch', 'scripts', 'images']);
