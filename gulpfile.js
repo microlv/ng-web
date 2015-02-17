@@ -43,7 +43,7 @@ var paths = {
         'public/stylesheets/ng-web-style.css',
         'public/libs/textAngular/src/textAngular.css'
     ],
-    ngTemplate: 'views/partial/*.html'
+    ngTemplate: 'views/partials/*.html'
 };
 
 // Not all tasks need to use streams
