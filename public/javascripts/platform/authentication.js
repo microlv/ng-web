@@ -5,6 +5,8 @@
 (function (angular) {
     'use strict';
 
+    //currently this auth function is not using.
+
     var authentication = angular.module('authentication', []);
 
     window.authentication = window.authentication || {

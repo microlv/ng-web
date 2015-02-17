@@ -19,6 +19,8 @@ use angularjs+nodejs+mongodb+express+mongoose,build for single page application 
 
 ## Support
 
+目前只使用Chrome测试，不保证其它浏览器的兼容性
+
 Currently only test in Chrome(lastest version), require angularjs/nodejs(iojs)/mongodb
 
 ## Installation & usage

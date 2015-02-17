@@ -1,0 +1,13 @@
+<div id="sidebar">
+    <a class="visible-phone" href ui-sref="topic">
+        <i class="icon icon-home"></i> Dashboard
+    </a>
+    <ul>
+        <li data-ng-repeat="item in layoutSidebarItemSource">
+            <a data-ng-href="{{item.href}}">
+                <i class="icon" data-ng-class="item.iStyle"></i>
+                <span> {{item.topic}}</span>
+            </a>
+        </li>
+    </ul>
+</div>

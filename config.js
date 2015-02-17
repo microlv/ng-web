@@ -6,9 +6,9 @@ module.exports = {
     session_secret: 'ng-web',
     auth_cookie_name: 'ng-web',
 
+
     MONGOLAB_URI: 'MONGOLAB_URI',
     GITHUB_CLIENT_ID: 'GITHUB_CLIENT_ID',
     GITHUB_CLIENT_SECRET: 'GITHUB_CLIENT_SECRET',
     GITHUB_CALLBACK: 'GITHUB_CALLBACK'
-    //ROLLBAR_ACCESS_TOKEN: ''
 };

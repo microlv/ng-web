@@ -9,7 +9,6 @@
         .directive('layoutHeader', ['$templateCache', 'dialogService', function ($templateCache, dialogService) {
             return {
                 restrict: 'EA',
-                scope: {},
                 template: $templateCache.get('layout-header.html'),
                 controller: function ($scope) {
                     $scope.login = function () {

@@ -6,7 +6,7 @@
     'use strict';
 
     var dependInject = [
-//        'ngAnimate',
+        'ngAnimate',
         'ui.router',
         'ui.bootstrap',
         'platform',
@@ -24,23 +24,23 @@
         cfpLoadingBarProvider.includeSpinner = false;
     }]);
 
-    app.config(['$provide', function ($provide) {
-        $provide.decorator('$templateCache', ['$http', '$delegate', '$injector', function ($http, $delegate, $injector) {
-            $delegate.loadedTemplateUrl = function (url) {
-                $http({
-                    url: url,
-                    method: 'GET'
-                }).then(function (r) {
-                    $injector.get('$compile')(r.data);
-                });
-            };
-            return $delegate;
-        }]);
-    }]);
-
-    app.run(['$templateCache', '$http', '$compile', function ($templateCache, $http, $compile) {
-        $templateCache.loadedTemplateUrl('/template/ng-template.html');
-    }]);
+    //app.config(['$provide', function ($provide) {
+    //    $provide.decorator('$templateCache', ['$http', '$delegate', '$injector', function ($http, $delegate, $injector) {
+    //        $delegate.loadedTemplateUrl = function (url) {
+    //            $http({
+    //                url: url,
+    //                method: 'GET'
+    //            }).then(function (r) {
+    //                $injector.get('$compile')(r.data);
+    //            });
+    //        };
+    //        return $delegate;
+    //    }]);
+    //}]);
+    //
+    //app.run(['$templateCache', '$http', '$compile', function ($templateCache, $http, $compile) {
+    //    $templateCache.loadedTemplateUrl('/template/ng-template.html');
+    //}]);
 
 
 })(angular);
