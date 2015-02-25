@@ -10,8 +10,7 @@
             return {
                 restrict: 'EA',
                 scope: {
-                    item: '=',
-                    isAdmin: '@'
+                    item: '='
                 },
                 template: $templateCache.get('article-item.html'),
                 link: function (scope, ele, att) {
@@ -19,10 +18,11 @@
                     scope.item.formatUpdateAt = commonService.YYYYMMDD(scope.item.updateAt);
                     scope.item.formatTransfer = scope.item.transfer ? '转载' : '原创';
                 },
-                controller: ['$scope', function ($scope) {
+                controller: ['$scope', '$rootScope', function ($scope, $rootScope) {
                     $scope.articleEdit = function (item) {
                         $state.go('update-article', {id: item._id});
                     };
+                    $scope.item.showEditButton = $rootScope.systemUser.isAdmin;
                 }]
             };
         }]);
