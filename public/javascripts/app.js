@@ -16,6 +16,10 @@
         'angular-loading-bar',
         'textAngular'
     ];
+    window.disqus_shortname = 'ng-web'; // required: replace example with your forum shortname
+    window.disqus_identifier = '';
+    //var disqus_title = 'a unique title for each page where Disqus is present';
+    window.disqus_url = '';
 
     var app = angular.module('app', dependInject);
 
