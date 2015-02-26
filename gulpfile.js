@@ -18,10 +18,7 @@ var paths = {
         'public/javascripts/app.js',
         'public/javascripts/platform/*.js',
         'public/javascripts/services/*.js',
-        //'public/javascripts/directive/layout-directive.js',
-        //'public/javascripts/directive/topic-item-directive.js',
-        //'public/javascripts/directive/topic-category-directive.js',
-        //'public/javascripts/directive/article-item-directive.js',
+        'public/javascripts/directive/*',
         'public/javascripts/controller/*.js'
     ],
     //{
@@ -57,10 +54,10 @@ gulp.task('scripts', ['clean'], function () {
     // Minify and copy all JavaScript (except vendor scripts)
     // with sourcemaps all the way down
     return gulp.src(paths.scripts)
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(concat('ng-web.min.js'))
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(gulp.dest('public/build/js'));
 });
 
