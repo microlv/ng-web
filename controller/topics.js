@@ -117,9 +117,42 @@ function saveArticle(req, res, next) {
     });
 }
 
+function deleteArticle(req, res, next) {
+
+    var sessionUser = req.session.user,
+        message = {
+            noRight: 'you have no right to delete a article!',
+            errArticle: 'you delete a err article!'
+        };
+
+    if (!sessionUser) {
+        res.send({err: message.noRight});
+    }
+
+    //before save, need validation
+    auth.authUser(sessionUser).then(function (d, r) {
+        if (r) {
+            d.resolve();
+        } else {
+            res.send({err: message.noRight});
+        }
+    }).then(function () {
+        topicDao.findOne({_id: req.body._id}, function (err, doc) {
+            if (err) {
+                return next(err);
+            }
+            doc.remove();
+            doc.save(function (err) {
+                res.send({result: "OK"});
+            });
+        });
+    });
+}
+
 module.exports = {
     groupTopics: groupTopics,
     getTopicsCategory: getTopicsCategory,
     getArticleById: getArticleById,
-    saveArticle: saveArticle
+    saveArticle: saveArticle,
+    deleteArticle: deleteArticle
 };

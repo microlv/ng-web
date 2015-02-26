@@ -5,16 +5,26 @@
 (function (angular) {
     'use strict';
 
-    angular.module('ngWeb').controller('mainframeController', ['$scope', '$http',
-        function ($scope, $http) {
+    angular.module('ngWeb').controller('mainframeController', ['$scope', '$http', '$rootScope',
+        function ($scope, $http, $rootScope) {
             //$scope.username = 'welcome';
+            //$scope.isAdmin = false;
             //$scope.isAuth = false;
-            $http.get('/api/auth/authUser').then(function (res) {
+            $rootScope.systemUser = {
+                username: 'welcome',
+                isAuth: false
+            };
 
-                if (res.status === 200 && res.data) {
-                    $scope.isAuth = true;
-                    $scope.isAdmin = res.data.isAdmin;
-                    $scope.username = res.data.username;
+            $http.get('/api/auth/authUser').then(function (res) {
+                if (res.status === 200 && !res.data.err) {
+                    //$scope.isAuth = true;
+                    //$scope.isAdmin = res.data.isAdmin;
+                    //$scope.username = res.data.username;
+                    $rootScope.systemUser = {
+                        username: res.data.username,
+                        isAdmin: res.data.isAdmin,
+                        isAuth: true
+                    };
                 }
             });
         }]);

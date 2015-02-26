@@ -16,6 +16,8 @@ router.get('/topics/grouptopics', topics.groupTopics);
 router.get('/topics/:category', topics.getTopicsCategory);
 router.get('/article/:id', topics.getArticleById);
 router.post('/saveArticle', topics.saveArticle);
+router.post('/deleteArticle', topics.deleteArticle);
+
 
 //router.post('/auth/login', auth.login);
 router.get('/auth/authUser', auth.authUserApi);
