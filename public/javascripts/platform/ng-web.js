@@ -16,7 +16,7 @@
             topic: 'Angularjs',
             liStyle: 'bg_lb span3',
             uiSref: 'angularjs',
-            iStyle: 'icon-twitter',
+            iStyle: 'icon-fire',
             spanStyle: 'label label-success'
         },
         {
