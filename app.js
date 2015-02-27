@@ -34,12 +34,10 @@ app.use(bodyParser.json({limit: '5mb'}));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser(config.session_secret));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(compression({
-    threshold: 512
-}));
 
+//custom middleware
+app.use(compression({threshold: 512}));
 app.use(responseTime());
-
 app.use(session({
     //if enable secret, please make sure use https!
     //secret: config.session_secret,
@@ -50,12 +48,9 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
-
 app.use(passport.initialize());
-
 app.use('/', web_api);
 app.use('/api', logic_api);
-
 
 // github oauth
 passport.serializeUser(function (user, done) {

@@ -7,7 +7,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
-var sourcemaps = require('gulp-sourcemaps');
+//var sourcemaps = require('gulp-sourcemaps');
 var minifyCSS = require('gulp-minify-css');
 var minifyHtml = require('gulp-minify-html');
 var ngTemplate = require('gulp-ng-template');
@@ -21,19 +21,6 @@ var paths = {
         'public/javascripts/directive/*',
         'public/javascripts/controller/*.js'
     ],
-    //{
-    //    platform: [
-    //        'public/javascripts/app.js',
-    //        'public/javascripts/platform/ng-web.js',
-    //        'public/javascripts/platform/platform.js',
-    //        'public/javascripts/platform/authentication.js',
-    //    ],
-    //    ctrl: [
-    //        'public/javascripts/services/*.js',
-    //        'public/javascripts/directive/*.js',
-    //        'public/javascripts/controller/*.js'
-    //    ]
-    //},
     images: 'public/images/*',
     css: [
         'public/stylesheets/ng-web-media.css',
@@ -54,34 +41,10 @@ gulp.task('scripts', ['clean'], function () {
     // Minify and copy all JavaScript (except vendor scripts)
     // with sourcemaps all the way down
     return gulp.src(paths.scripts)
-        //.pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(concat('ng-web.min.js'))
-        //.pipe(sourcemaps.write())
         .pipe(gulp.dest('public/build/js'));
 });
-
-//gulp.task('scripts.platform', ['clean'], function () {
-//    // Minify and copy all JavaScript (except vendor scripts)
-//    // with sourcemaps all the way down
-//    return gulp.src(paths.scripts.platform)
-//        .pipe(sourcemaps.init())
-//        .pipe(uglify())
-//        .pipe(concat('ng-web.platform.min.js'))
-//        .pipe(sourcemaps.write())
-//        .pipe(gulp.dest('public/build/js'));
-//});
-//
-//gulp.task('scripts.ctrl', ['clean'], function () {
-//    // Minify and copy all JavaScript (except vendor scripts)
-//    // with sourcemaps all the way down
-//    return gulp.src(paths.scripts.ctrl)
-//        .pipe(sourcemaps.init())
-//        .pipe(uglify())
-//        .pipe(concat('ng-web.ctrl.min.js'))
-//        .pipe(sourcemaps.write())
-//        .pipe(gulp.dest('public/build/js'));
-//});
 
 // Copy all static images
 gulp.task('images', ['clean'], function () {

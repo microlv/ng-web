@@ -5,7 +5,6 @@
 'use strict';
 
 var topics = require('./controller/topics');
-var passport = require('passport');
 var github = require('./middlewares').github;
 var auth = require('./middlewares').auth;
 
@@ -15,14 +14,12 @@ var router = express.Router();
 router.get('/topics/grouptopics', topics.groupTopics);
 router.get('/topics/:category', topics.getTopicsCategory);
 router.get('/article/:id', topics.getArticleById);
-router.post('/saveArticle', topics.saveArticle);
-router.post('/deleteArticle', topics.deleteArticle);
 
-
-//router.post('/auth/login', auth.login);
 router.get('/auth/authUser', auth.authUserApi);
-//router.get('/auth/github', github.githubAuth);
 router.get('/auth/github', github.githubAuth());
 router.get('/auth/github/callback', github.githubAuth({failureRedirect: '/'}), github.githubCallback);
+
+router.post('/saveArticle', topics.saveArticle);
+router.post('/deleteArticle', topics.deleteArticle);
 
 module.exports = router;
