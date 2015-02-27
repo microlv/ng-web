@@ -14,7 +14,7 @@ function render(html) {
 }
 
 router.get('/', function (req, res) {
-    var debug = process.env.debug || require('./config').debug;
+    var debug = process.env.debug === false ? false: require('./config').debug;
     var html = debug ? 'index_test' : 'index';
     res.render(html);
 });
