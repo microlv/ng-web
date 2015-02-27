@@ -14,8 +14,8 @@ function render(html) {
 }
 
 router.get('/', function (req, res) {
-    var debug = process.env.requireHttps || require('./config').debug;
-    var html = debug ? 'index_test' : 'index';
+    //special case for test debug model
+    var html = process.env.release === true ? 'index' : 'index_test';
     res.render(html);
 });
 router.get('/templates/about', render('templates/about'));
