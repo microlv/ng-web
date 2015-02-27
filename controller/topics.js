@@ -10,24 +10,7 @@ var topicDao = require('../dao').topics;
 var router = express.Router();
 var config = require('../config');
 
-function setUser(req, res) {
-    if (config.debug) {
-        req.session.user = {
-            "_id": "54cdf3f06014f5580bc34441",
-            "provider": "github",
-            "profileUrl": "https://github.com/microlv",
-            "avatar": "https://avatars.githubusercontent.com/u/5182589?v=3",
-            "username": "microlv",
-            "githubid": "5182589",
-            "__v": 0,
-            "token": "a86ad7150367397ecf66",
-            "isAdmin": true
-        };
-    }
-}
-
 function groupTopics(req, res, next) {
-    setUser(req, res);
     topicDao.groupTopics(function (err, docs) {
         if (err) {
             next(err);
