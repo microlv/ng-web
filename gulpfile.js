@@ -46,6 +46,17 @@ gulp.task('scripts', ['clean'], function () {
         .pipe(gulp.dest('public/build/js'));
 });
 
+gulp.task('ng-template', ['clean'], function () {
+    return gulp.src(paths.ngTemplate)
+        .pipe(minifyHtml({empty: true, quotes: true}))
+        .pipe(ngTemplate({
+            moduleName: 'ngWeb',
+            filePath: 'tpl.min.js'
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('public/build/js'));
+});
+
 // Copy all static images
 gulp.task('images', ['clean'], function () {
     return gulp.src(paths.images)
@@ -59,17 +70,6 @@ gulp.task('minify-css', ['clean'], function () {
         .pipe(minifyCSS())
         .pipe(concat('ng-web.min.css'))
         .pipe(gulp.dest('public/build/css'));
-});
-
-gulp.task('ng-template', ['clean'], function () {
-    return gulp.src(paths.ngTemplate)
-        .pipe(minifyHtml({empty: true, quotes: true}))
-        .pipe(ngTemplate({
-            moduleName: 'ngWeb',
-            filePath: 'ng/tpl.min.js'
-        }))
-        .pipe(uglify())
-        .pipe(gulp.dest('public/build/'));
 });
 
 // Rerun the task when a file changes
