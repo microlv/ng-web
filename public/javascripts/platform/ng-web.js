@@ -60,6 +60,13 @@
             uiSref: 'sql',
             iStyle: 'icon-th-large',
             spanStyle: 'label label-success'
+        },
+        {
+            topic: 'Planing',
+            liStyle: 'bg_lv span3',
+            uiSref: 'planing',
+            iStyle: ' icon-coffee',
+            spanStyle: 'label label-success'
         }
     ]);
 
