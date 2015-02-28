@@ -34,7 +34,7 @@
             spanStyle: 'label label-success'
         },
         {
-            topic: 'Web Safe',
+            topic: 'Web Security',
             liStyle: 'bg_dg span3',
             uiSref: 'websafe',
             iStyle: 'icon-lock',
