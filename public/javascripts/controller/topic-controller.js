@@ -16,7 +16,7 @@
 
                     _.forEach(response.data, function (k) {
                         var updateItem = _.find($scope.data, function (i) {
-                            return k._id.toLowerCase() === i.topic.toLowerCase();
+                            return k._id.toLowerCase() === i.uiSref.toLowerCase();
                         });
                         if (updateItem) {
                             updateItem.number = k.count;

@@ -25,30 +25,14 @@ function githubStrategy() {
     );
 }
 function githubAuth(config) {
-    //if (config.debug) {
-    //    req.session.user = {
-    //        "_id": "54cdf3f06014f5580bc34441",
-    //        "provider": "github",
-    //        "profileUrl": "https://github.com/microlv",
-    //        "avatar": "https://avatars.githubusercontent.com/u/5182589?v=3",
-    //        "username": "microlv",
-    //        "githubid": "5182589",
-    //        "__v": 0,
-    //        "token": "a86ad7150367397ecf66ade2858ef798257aeb3a",
-    //        "isAdmin": true
-    //    };
-    //    auth.encryptSession(req.session.user , res);
-    //    res.redirect('/');
-    //}
-
     if (config) {
         return passport.authenticate('github', config);
     }
     return passport.authenticate('github');
 }
 
-function createUser(profile) {
-    var user = {};
+function createUser(profile, oldUser) {
+    var user = oldUser || {};
     user.username = profile.username;
     user.avatar = profile._json.avatar_url;
     if (profile.emails[0].value) {
@@ -74,13 +58,13 @@ function githubCallback(req, res, next) {
         });
     }).then(function (d, user) {
         if (user) {
-            var updateUser = createUser(profile);
+            createUser(profile, user);
             //set user as default not admin
             user.save(function (err) {
                 if (err) {
                     return next(err);
                 }
-                d.resolve(updateUser);
+                d.resolve(user);
             });
         } else {
             userDao.save(profile, function (err) {

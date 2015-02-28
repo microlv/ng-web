@@ -13,18 +13,22 @@ function render(html) {
     };
 }
 
+function handleIndex(req, res) {
+    //special case for test debug model
+    var html = process.env.release === true ? 'index' : 'index_test';
+    res.render(html);
+}
+
 router.get('/', function (req, res) {
-    var debug = process.env.debug || require('./config').debug;
-    var html = debug ? 'index_test' : 'index';
+    //special case for test debug model
+    var html = !!process.env.release ? 'index' : 'index_test';
     res.render(html);
 });
 router.get('/templates/about', render('templates/about'));
 router.get('/templates/article', render('templates/article'));
-//router.get('/templates/article/:id', render('templates/article'));
 router.get('/templates/topic', render('templates/topic'));
 router.get('/templates/topic/:category', render('templates/topic-category'));
 router.get('/templates/edit-article', render('templates/edit-article'));
-
 
 router.get('/partials/dialog-modal', render('partials/dialog-modal'));
 router.get('/partials/login', render('partials/login'));

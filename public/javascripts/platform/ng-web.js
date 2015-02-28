@@ -14,16 +14,30 @@
         },
         {
             topic: 'Angularjs',
-            liStyle: 'bg_lb span2',
+            liStyle: 'bg_lb span3',
             uiSref: 'angularjs',
-            iStyle: 'icon-twitter',
+            iStyle: 'icon-fire',
             spanStyle: 'label label-success'
         },
         {
             topic: 'NodeJS',
-            liStyle: 'bg_ly span2',
+            liStyle: 'bg_ly span3',
             uiSref: 'nodejs',
             iStyle: 'icon-beaker',
+            spanStyle: 'label label-success'
+        },
+        {
+            topic: 'HTML5/CSS3',
+            liStyle: 'bg_lr span3',
+            uiSref: 'html_css',
+            iStyle: 'icon-bookmark-empty',
+            spanStyle: 'label label-success'
+        },
+        {
+            topic: 'Web Security',
+            liStyle: 'bg_dg span3',
+            uiSref: 'websafe',
+            iStyle: 'icon-lock',
             spanStyle: 'label label-success'
         },
         {
@@ -35,17 +49,25 @@
         },
         {
             topic: 'MongoDB',
-            liStyle: 'bg_ls',
+            liStyle: 'bg_ls ',
             uiSref: 'mongodb',
             iStyle: 'icon-cloud',
             spanStyle: 'label label-success'
         },
         {
             topic: 'SQL',
-            liStyle: 'bg_lo',
+            liStyle: 'bg_lo ',
             uiSref: 'sql',
             iStyle: 'icon-th-large',
             spanStyle: 'label label-success'
-        }]);
+        },
+        {
+            topic: 'Planing',
+            liStyle: 'bg_lv span3',
+            uiSref: 'planing',
+            iStyle: ' icon-coffee',
+            spanStyle: 'label label-success'
+        }
+    ]);
 
 })(angular);

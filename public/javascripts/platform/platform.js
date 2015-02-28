@@ -7,7 +7,6 @@
 
     angular.module('platform', []).config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
         function ($stateProvider, $urlRouterProvider, $locationProvider) {
-            //$locationProvider.html5Mode(true);
             $urlRouterProvider.otherwise('topic');
 
             $stateProvider
@@ -29,6 +28,8 @@
                 .state('update-article', {
                     url: '/edit-article/:id', templateUrl: '/templates/edit-article'
                 });
+
+            //$locationProvider.html5Mode(true).hashPrefix('!');
         }]);
 })(angular);
 

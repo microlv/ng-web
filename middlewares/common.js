@@ -13,7 +13,6 @@ function requireHttps() {
     };
 }
 
-
 module.exports = {
     requireHttps: requireHttps
 };
