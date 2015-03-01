@@ -49,14 +49,14 @@
         },
         {
             topic: 'MongoDB',
-            liStyle: 'bg_ls ',
+            liStyle: 'bg_ls span3',
             uiSref: 'mongodb',
             iStyle: 'icon-cloud',
             spanStyle: 'label label-success'
         },
         {
             topic: 'SQL',
-            liStyle: 'bg_lo ',
+            liStyle: 'bg_lo span3',
             uiSref: 'sql',
             iStyle: 'icon-th-large',
             spanStyle: 'label label-success'
