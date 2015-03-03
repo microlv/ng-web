@@ -394,7 +394,7 @@ hr {
 #breadcrumb a {
     padding: 8px 20px 8px 10px;
     display: inline-block;
-    background-image: url('../img/breadcrumb.png');
+    /*background-image: url('../img/breadcrumb.png');*/
     background-position: center right;
     background-repeat: no-repeat;
     font-size: 11px;
@@ -425,38 +425,38 @@ hr {
 }
 
 /*todo-list*/
-.todo ul {
-    list-style: none outside none;
-    margin: 0;
-}
+/*.todo ul {*/
+/*list-style: none outside none;*/
+/*margin: 0;*/
+/*}*/
 
-.todo li {
-    border-bottom: 1px solid #EBEBEB;
-    margin-bottom: 0;
-    padding: 10px 0;
-}
+/*.todo li {*/
+/*border-bottom: 1px solid #EBEBEB;*/
+/*margin-bottom: 0;*/
+/*padding: 10px 0;*/
+/*}*/
 
-.todo li:hover {
-    background: none repeat scroll 0 0 #FCFCFC;
-    border-color: #D9D9D9;
-}
+/*.todo li:hover {*/
+/*background: none repeat scroll 0 0 #FCFCFC;*/
+/*border-color: #D9D9D9;*/
+/*}*/
 
-.todo li:last-child {
-    border-bottom: 0px;
-}
+/*.todo li:last-child {*/
+/*border-bottom: 0px;*/
+/*}*/
 
-.todo li .txt {
-    float: left;
-}
+/*.todo li .txt {*/
+/*float: left;*/
+/*}*/
 
-.todo li .by {
-    margin-left: 10px;
-    margin-right: 10px;
-}
+/*.todo li .by {*/
+/*margin-left: 10px;*/
+/*margin-right: 10px;*/
+/*}*/
 
-.todo li .date {
-    margin-right: 10px;
-}
+/*.todo li .date {*/
+/*margin-right: 10px;*/
+/*}*/
 
 /* Stat boxes and quick actions */
 .quick-actions_homepage {
@@ -3348,4 +3348,8 @@ ul.icons li [class*=" icon-"] {
 
 .content-header-show-type > a {
     padding: 0;
+}
+
+.article-show-style {
+    color: #008000 !important;
 }

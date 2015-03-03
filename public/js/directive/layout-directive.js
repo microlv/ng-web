@@ -9,8 +9,7 @@
   angular.module('ngWeb').directive('layoutHeader', ['$templateCache', function ($templateCache) {
     return {
       restrict: 'EA',
-      template: $templateCache.get('layout-header.html'),
-
+      template: $templateCache.get('layout-header.html')
     };
   }]).directive('layoutFooter', ['$templateCache', 'dialogService', function ($templateCache, dialogService) {
     return {
@@ -39,7 +38,27 @@
     }]).directive('layoutContent', ['$templateCache', function ($templateCache) {
       return {
         restrict: 'EA',
-        template: $templateCache.get('layout-content.html')
+        template: $templateCache.get('layout-content.html'),
+        controller: ['$rootScope', '$scope', function ($rootScope, $scope) {
+          $rootScope.systemConfig = $rootScope.systemConfig || {};
+          var sc = $rootScope.systemConfig;
+          sc.articleStyle = 'list';//default value
+          $scope.showList = true;
+
+          $scope.changeArticleShowStyle = function (style) {
+            switch (style) {
+              case 'list':
+                sc.articleStyle = 'list';
+                break;
+              case 'detail':
+                sc.articleStyle = 'detail';
+                break;
+              default:
+                break;
+            }
+            $scope.showList = sc.articleStyle === 'list';
+          };
+        }]
       };
     }]).directive('layoutSearch', ['$templateCache', function ($templateCache) {
       return {
