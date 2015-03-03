@@ -177,7 +177,7 @@ hr {
 #search {
     position: absolute;
     z-index: 25;
-    top: 6px;
+    top: 10px;
     right: 10px;
 }
 
@@ -207,7 +207,7 @@ hr {
 #user-nav {
     position: absolute;
     left: 5px;
-    top: 7px;
+    top: 10px;
     /*z-index: 20;*/
     margin: 0;
     color: #939da8;
@@ -3352,4 +3352,8 @@ ul.icons li [class*=" icon-"] {
 
 .article-show-style {
     color: #008000 !important;
+}
+
+.article-item-a {
+    color: #003B6F;
 }

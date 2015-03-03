@@ -22,7 +22,7 @@ function groupTopics(callback) {
 
 function getTopicsCategory(category, callback) {
   //point out which columns will be return
-  Topics.find(category, '_id category title visitCount updateAt transfer', callback);
+  Topics.find(category).sort({"updateAt": -1}).exec(callback);
 }
 
 function getArticleById(obj, callback) {
