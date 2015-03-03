@@ -15,16 +15,16 @@ var del = require('del');
 
 var paths = {
     scripts: [
-        'public/javascripts/app.js',
-        'public/javascripts/platform/*.js',
-        'public/javascripts/services/*.js',
-        'public/javascripts/directive/*',
-        'public/javascripts/controller/*.js'
+        'public/js/app.js',
+        'public/js/platform/*.js',
+        'public/js/services/*.js',
+        'public/js/directive/*',
+        'public/js/controller/*.js'
     ],
     images: 'public/images/*',
     css: [
-        'public/stylesheets/ng-web-media.css',
-        'public/stylesheets/ng-web-style.css',
+        'public/css/ng-web-media.css',
+        'public/css/ng-web-style.css',
         'public/libs/textAngular/src/textAngular.css'
     ],
     ngTemplate: 'views/partials/*.html'

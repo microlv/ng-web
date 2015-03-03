@@ -20,6 +20,13 @@
             spanStyle: 'label label-success'
         },
         {
+            topic: 'jQuery',
+            liStyle: 'bg_dx span3',
+            uiSref: 'jquery',
+            iStyle: 'icon-bolt',
+            spanStyle: 'label label-success'
+        },
+        {
             topic: 'NodeJS',
             liStyle: 'bg_ly span3',
             uiSref: 'nodejs',
@@ -56,7 +63,7 @@
         },
         {
             topic: 'SQL',
-            liStyle: 'bg_lo span3',
+            liStyle: 'bg_lx span3',
             uiSref: 'sql',
             iStyle: 'icon-th-large',
             spanStyle: 'label label-success'
