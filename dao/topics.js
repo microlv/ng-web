@@ -8,46 +8,46 @@ var Topics = require('../models').Topics;
 var _ = require('lodash');
 
 function groupTopics(callback) {
-    var data = Topics.aggregate([
-        {
-            $project: {category: 1}
-        },
-        {
-            $group: {
-                _id: '$category',
-                count: {$sum: 1}
-            }
-        }], callback);
+  var data = Topics.aggregate([
+    {
+      $project: {category: 1}
+    },
+    {
+      $group: {
+        _id: '$category',
+        count: {$sum: 1}
+      }
+    }], callback);
 }
 
 function getTopicsCategory(category, callback) {
-    //point out which columns will be return
-    Topics.find(category, '_id category title visitCount updateAt transfer', callback);
+  //point out which columns will be return
+  Topics.find(category, '_id category title visitCount updateAt transfer', callback);
 }
 
 function getArticleById(obj, callback) {
-    Topics.findOne(obj, function (err, doc) {
-        doc.visitCount += 1;
-        doc.save(function () {
-        });
-        callback(err, doc);
+  Topics.findOne(obj, function (err, doc) {
+    doc.visitCount += 1;
+    doc.save(function () {
     });
+    callback(err, doc);
+  });
 }
 
 function findOne(obj, callback) {
-    Topics.findOne(obj, callback);
+  Topics.findOne(obj, callback);
 }
 
 function save(entity, callback) {
-    var topic = new Topics();
-    _.extend(topic, entity);
-    topic.save(callback);
+  var topic = new Topics();
+  _.extend(topic, entity);
+  topic.save(callback);
 }
 
 module.exports = {
-    groupTopics: groupTopics,
-    getTopicsCategory: getTopicsCategory,
-    getArticleById: getArticleById,
-    save: save,
-    findOne: findOne
+  groupTopics: groupTopics,
+  getTopicsCategory: getTopicsCategory,
+  getArticleById: getArticleById,
+  save: save,
+  findOne: findOne
 };
