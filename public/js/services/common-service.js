@@ -3,27 +3,26 @@
  */
 
 (function (angular) {
-    'use strict';
+  'use strict';
 
-    angular.module('platform').factory('commonService', [function () {
+  angular.module('platform').factory('commonService', [function () {
 
-        function YYYYMMDD(str) {
+    function YYYYMMDD(str) {
+      var d = new Date(str),
+        date = d.getDate(),
+        sep = '-';
+      if (date < 10) {
+        date = '0' + date;
+      }
+      var month = d.getMonth() + 1;
+      if (month < 10) {
+        month = '0' + month;
+      }
+      return d.getFullYear() + sep + month + sep + date;
+    }
 
-            var d = new Date(str),
-                date = d.getDate(),
-                sep = '-';
-            if (date < 10) {
-                date = '0' + date;
-            }
-            var month = d.getMonth() + 1;
-            if (month < 10) {
-                month = '0' + month;
-            }
-            return d.getFullYear() + sep + month + sep + date;
-        }
-
-        return {
-            YYYYMMDD: YYYYMMDD
-        };
-    }]);
+    return {
+      YYYYMMDD: YYYYMMDD
+    };
+  }]);
 })(angular);

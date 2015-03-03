@@ -25,6 +25,8 @@ router.get('/', function (req, res) {
     res.render(html);
 });
 router.get('/templates/about', render('templates/about'));
+router.get('/templates/livejs', render('templates/livejs'));
+router.get('/templates/ng-message', render('templates/ng-message'));
 router.get('/templates/article', render('templates/article'));
 router.get('/templates/topic', render('templates/topic'));
 router.get('/templates/topic/:category', render('templates/topic-category'));

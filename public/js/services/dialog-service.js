@@ -3,18 +3,18 @@
  */
 
 (function (angular) {
-    'use strict';
+  'use strict';
 
-    angular.module('platform').factory('dialogService', ['$modal', '$templateCache', function ($modal, $templateCache) {
-        return {
-            show: function (options) {
-                var defaultOptions = {};
-                angular.copy(options, defaultOptions);
-                defaultOptions.template = $templateCache.get(options.template);
-                var modalInstance = $modal.open(defaultOptions);
+  angular.module('platform').factory('dialogService', ['$modal', '$templateCache', function ($modal, $templateCache) {
+    return {
+      show: function (options) {
+        var defaultOptions = {};
+        angular.copy(options, defaultOptions);
+        defaultOptions.template = $templateCache.get(options.template);
+        var modalInstance = $modal.open(defaultOptions);
 
-                return modalInstance.result;
-            }
-        };
-    }]);
+        return modalInstance.result;
+      }
+    };
+  }]);
 })(angular);

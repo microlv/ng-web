@@ -3,16 +3,16 @@
  */
 
 (function (angular) {
-    'use strict';
+  'use strict';
 
-    angular.module('ngWeb').controller('articleController', ['$scope', '$http', '$state',
-        function ($scope, $http, $state) {
+  angular.module('ngWeb').controller('articleController',
+    ['$scope', '$http', '$state', function ($scope, $http, $state) {
 
-            $http.get('/api/article/' + $state.params.id).then(function (res) {
-                if (res.status === 200 && res.data) {
-                    $('#articleContent').append(res.data.content);
-                }
-            });
-        }]);
+      $http.get('/api/article/' + $state.params.id).then(function (res) {
+        if (res.status === 200 && res.data) {
+          $('#articleContent').append(res.data.content);
+        }
+      });
+    }]);
 
 })(angular);
