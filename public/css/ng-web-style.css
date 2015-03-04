@@ -146,6 +146,10 @@ hr {
     background: #603bbc;
 }
 
+.bg_lp {
+    background: #f43e0f;
+}
+
 .bg_lh {
     background: #b6b3b3;
 }
@@ -534,8 +538,8 @@ hr {
 .quick-actions_homepage .quick-actions li .label {
     position: absolute;
     padding: 5px;
-    top: -10px;
-    right: -5px;
+    top: -4px;
+    right: -4px;
 }
 
 .stats-plain {

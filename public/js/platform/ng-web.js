@@ -74,7 +74,15 @@
       uiSref: 'planing',
       iStyle: ' icon-coffee',
       spanStyle: 'label label-success'
+    },
+    {
+      topic: 'Interview',
+      liStyle: 'bg_lp span3',
+      uiSref: 'interview',
+      iStyle: ' icon-book',
+      spanStyle: 'label label-success'
     }
   ]);
 
 })(angular);
+
