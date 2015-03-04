@@ -20,7 +20,7 @@ body {
 }
 
 a {
-    color: #666;
+    color: #939da8;
 }
 
 a:hover, a:focus {
@@ -74,6 +74,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 #footer {
     padding: 10px;
     text-align: center;
+    color: #939da8;
 }
 
 hr {
@@ -129,6 +130,14 @@ hr {
     background: #da542e;
 }
 
+.bg_lx {
+    background: #7c3777;
+}
+
+.bg_dx {
+    background: #04dbca;
+}
+
 .bg_lr {
     background: #f74d4d;
 }
@@ -168,7 +177,7 @@ hr {
 #search {
     position: absolute;
     z-index: 25;
-    top: 6px;
+    top: 10px;
     right: 10px;
 }
 
@@ -197,10 +206,11 @@ hr {
 /* Top user navigation */
 #user-nav {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 5px;
+    top: 10px;
     /*z-index: 20;*/
     margin: 0;
+    color: #939da8;
     border-radius: 0;
 }
 
@@ -384,7 +394,7 @@ hr {
 #breadcrumb a {
     padding: 8px 20px 8px 10px;
     display: inline-block;
-    background-image: url('../img/breadcrumb.png');
+    /*background-image: url('../img/breadcrumb.png');*/
     background-position: center right;
     background-repeat: no-repeat;
     font-size: 11px;
@@ -415,38 +425,38 @@ hr {
 }
 
 /*todo-list*/
-.todo ul {
-    list-style: none outside none;
-    margin: 0;
-}
+/*.todo ul {*/
+/*list-style: none outside none;*/
+/*margin: 0;*/
+/*}*/
 
-.todo li {
-    border-bottom: 1px solid #EBEBEB;
-    margin-bottom: 0;
-    padding: 10px 0;
-}
+/*.todo li {*/
+/*border-bottom: 1px solid #EBEBEB;*/
+/*margin-bottom: 0;*/
+/*padding: 10px 0;*/
+/*}*/
 
-.todo li:hover {
-    background: none repeat scroll 0 0 #FCFCFC;
-    border-color: #D9D9D9;
-}
+/*.todo li:hover {*/
+/*background: none repeat scroll 0 0 #FCFCFC;*/
+/*border-color: #D9D9D9;*/
+/*}*/
 
-.todo li:last-child {
-    border-bottom: 0px;
-}
+/*.todo li:last-child {*/
+/*border-bottom: 0px;*/
+/*}*/
 
-.todo li .txt {
-    float: left;
-}
+/*.todo li .txt {*/
+/*float: left;*/
+/*}*/
 
-.todo li .by {
-    margin-left: 10px;
-    margin-right: 10px;
-}
+/*.todo li .by {*/
+/*margin-left: 10px;*/
+/*margin-right: 10px;*/
+/*}*/
 
-.todo li .date {
-    margin-right: 10px;
-}
+/*.todo li .date {*/
+/*margin-right: 10px;*/
+/*}*/
 
 /* Stat boxes and quick actions */
 .quick-actions_homepage {
@@ -3330,4 +3340,20 @@ ul.icons li [class*=" icon-"] {
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.content-header-show-type {
+    float: right;
+}
+
+.content-header-show-type > a {
+    padding: 0;
+}
+
+.article-show-style {
+    color: #008000 !important;
+}
+
+.article-item-a {
+    color: #003B6F;
 }

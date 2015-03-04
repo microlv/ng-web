@@ -1,18 +1,10 @@
-<div style="height: 81px">
-    <div id="user-nav" class="navbar navbar-inverse">
-        <ul class="nav">
-            <li data-ng-show="!systemUser.isAuth">
-                <a href ng-click="login()">
-                    <i class="icon-github"></i>
-                    <span class="text">Login</span>
-                </a>
-            </li>
-            <li data-ng-show="systemUser.isAuth">
-                <a>
-                    <i class="icon icon-user"></i>
-                    <span class="text">{{systemUser.username}}</span>
-                </a>
-            </li>
-        </ul>
+<div style="height: 85px">
+    <div id="user-nav">
+        <a data-ng-show="systemUser.isAuth">
+            <i class="icon icon-user"></i>
+            <span class="text">{{systemUser.username}}</span>
+        </a>
+        <img src="images/microlv.ico">
+        <span class="text">Microlv's tech blog, js/nodejs/mongo code worker, full stack developer, technology changing the world!</span>
     </div>
 </div>

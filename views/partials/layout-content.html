@@ -4,6 +4,17 @@
             <a ui-sref="topic" title="Go to Home" class="tip-bottom">
                 <i class="icon-home"></i>Home
             </a>
+
+            <div class="content-header-show-type">
+                <a href data-ng-click="changeArticleShowStyle('list')" data-ng-class="{'article-show-style':showList}">
+                    <i class="icon-ok" data-ng-show="showList"></i>
+                    <i class="icon-list"></i>title
+                </a>
+                <a href data-ng-click="changeArticleShowStyle('detail')" data-ng-class="{'article-show-style':!showList}">
+                    <i class="icon-ok" data-ng-show="!showList"></i>
+                    <i class="icon-indent-right"></i>detail
+                </a>
+            </div>
         </div>
     </div>
     <div ui-view></div>

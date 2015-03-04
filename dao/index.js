@@ -8,7 +8,7 @@ var user = require('./user');
 var topics = require('./topics');
 
 module.exports = {
-    user: user,
-    topics: topics
+  user: user,
+  topics: topics
 };
 

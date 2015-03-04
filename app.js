@@ -39,14 +39,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(compression({threshold: 512}));
 app.use(responseTime());
 app.use(session({
-    //if enable secret, please make sure use https!
-    //secret: config.session_secret,
-    store: new connectMongo({
-        url: process.env.MONGOLAB_URI || config.dbconnect
-    }),
-    //cookie: {secure: true},
-    resave: true,
-    saveUninitialized: true
+  //if enable secret, please make sure use https!
+  //secret: config.session_secret,
+  store: new connectMongo({
+    url: process.env.MONGOLAB_URI || config.dbconnect
+  }),
+  //cookie: {secure: true},
+  resave: true,
+  saveUninitialized: true
 }));
 app.use(passport.initialize());
 app.use('/', web_api);
@@ -54,19 +54,19 @@ app.use('/api', logic_api);
 
 // github oauth
 passport.serializeUser(function (user, done) {
-    done(null, user);
+  done(null, user);
 });
 passport.deserializeUser(function (user, done) {
-    done(null, user);
+  done(null, user);
 });
 //use github strategy
 passport.use(github.githubStrategy());
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 // error handlers
@@ -74,23 +74,23 @@ app.use(function (req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
+  app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+      message: err.message,
+      error: err
     });
+  });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: {}
+  });
 });
 
 var debug = require('debug')('ng-web');
@@ -98,5 +98,5 @@ var debug = require('debug')('ng-web');
 app.set('port', process.env.PORT || 3000);
 
 var server = app.listen(app.get('port'), function () {
-    debug('Express server listening on port ' + server.address().port);
+  debug('Express server listening on port ' + server.address().port);
 });

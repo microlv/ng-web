@@ -9,7 +9,7 @@ var github = require('./github');
 var common = require('./common');
 
 module.exports = {
-    auth: auth,
-    github: github,
-    common: common
+  auth: auth,
+  github: github,
+  common: common
 };
