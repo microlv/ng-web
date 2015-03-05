@@ -27,6 +27,13 @@
       spanStyle: 'label label-success'
     },
     {
+      topic: 'DesignPattern',
+      liStyle: 'bg_dz span3',
+      uiSref: 'design-patterns',
+      iStyle: 'icon-lightbulb',
+      spanStyle: 'label label-success'
+    },
+    {
       topic: 'NodeJS',
       liStyle: 'bg_ly span3',
       uiSref: 'nodejs',
@@ -74,7 +81,15 @@
       uiSref: 'planing',
       iStyle: ' icon-coffee',
       spanStyle: 'label label-success'
+    },
+    {
+      topic: 'Interview',
+      liStyle: 'bg_lp span3',
+      uiSref: 'interview',
+      iStyle: ' icon-book',
+      spanStyle: 'label label-success'
     }
   ]);
 
 })(angular);
+
