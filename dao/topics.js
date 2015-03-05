@@ -8,16 +8,16 @@ var Topics = require('../models').Topics;
 var _ = require('lodash');
 
 function groupTopics(callback) {
-  var data = Topics.aggregate([
-    {
-      $project: {category: 1}
-    },
-    {
-      $group: {
-        _id: '$category',
-        count: {$sum: 1}
-      }
-    }], callback);
+  var data = Topics.aggregate(
+    [{
+       $project: {category: 1}
+     },
+     {
+       $group: {
+         _id: '$category',
+         count: {$sum: 1}
+       }
+     }], callback);
 }
 
 function getTopicsCategory(category, callback) {

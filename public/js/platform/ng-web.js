@@ -27,6 +27,13 @@
       spanStyle: 'label label-success'
     },
     {
+      topic: 'DesignPattern',
+      liStyle: 'bg_dz span3',
+      uiSref: 'design-patterns',
+      iStyle: 'icon-lightbulb',
+      spanStyle: 'label label-success'
+    },
+    {
       topic: 'NodeJS',
       liStyle: 'bg_ly span3',
       uiSref: 'nodejs',
