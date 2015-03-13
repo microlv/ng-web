@@ -13,12 +13,6 @@ function render(html) {
   };
 }
 
-function handleIndex(req, res) {
-  //special case for test debug model
-  var html = process.env.release === true ? 'index' : 'index_test';
-  res.render(html);
-}
-
 router.get('/', function (req, res) {
   //special case for test debug model
   var html = !!process.env.release ? 'index' : 'index_test';
