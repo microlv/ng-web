@@ -5,10 +5,11 @@
 
 function requireHttps() {
   return function (req, res, next) {
-    if (process.env.requireHttps && req.headers['x-forwarded-proto'] !== 'https') {
-      console.log('require https');
-      res.redirect('https://' + req.headers.host + req.path);
-    }
+    //because cdn can't work, remove it temp.
+    //if (process.env.requireHttps && req.headers['x-forwarded-proto'] !== 'https') {
+    //  console.log('require https');
+    //  res.redirect('https://' + req.headers.host + req.path);
+    //}
     next();
   };
 }
