@@ -6,13 +6,12 @@ ng-web
 
 use angularjs+nodejs+mongodb+express+mongoose,build for single page application web blog.
 
-1. 本站的主要目的是使用时下流行的js技术进建立一个人网站，使用的技术主要为angularjs,nodejs(iojs),mongodb
-2. Demo: https://microlv.heroku.com & https://ng-web.heroku.com
+本站的主要目的是使用时下流行的js技术进建立一个人网站，使用的技术主要为angularjs,nodejs(iojs),mongodb
 
-## Download
+Demo: 
 
-1. Check out [https://github.com/microlv/ng-web.git]
-2. Wiki: http://microlv.github.io/ng-web   (not finished)
+1. https://microlv.heroku.com 
+2. https://ng-web.heroku.com
 
 ## Features
 
@@ -30,7 +29,9 @@ Currently only test in Chrome(lastest version), require angularjs/nodejs(iojs)/m
 ```
 1. 安装mongodb并运行：mongod --dbpath .\data\db(目录)
 2. 安装nodejs(iojs)
-2. 下载程序并安装依赖：npm install
+2. 下载程序并安装依赖：
+   npm install
+   bower install
 3. 跑程序：node app.js
 
 ```
@@ -38,6 +39,7 @@ Currently only test in Chrome(lastest version), require angularjs/nodejs(iojs)/m
 ## Author
 
  Andy.lv@live.com;
- Any problem contact with me.
+ 
+ Any problem contact with me. You are welcome to contribute!
 
 ## Contributors
