@@ -10,8 +10,8 @@ use angularjs+nodejs+mongodb+express+mongoose,build for single page application 
 
 Demo: 
 
-1. https://microlv.heroku.com 
-2. https://ng-web.heroku.com
+1. http://microlv.heroku.com 
+2. http://ng-web.heroku.com
 
 ## Features
 
